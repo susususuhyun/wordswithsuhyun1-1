@@ -21,13 +21,14 @@
         
         <header class="bg-indigo-600 text-white p-4 text-center shadow-md">
             <h1 class="text-xl font-bold tracking-wide">🦓 얼룩말영어학원</h1>
-            <p class="text-xs text-indigo-200 mt-1 font-medium">중등 고난도 17과 단어장 (어원·동계어)</p>
+            <p class="text-xs text-indigo-200 mt-1 font-medium">중등 고난도 18, 19과 단어장 (어원·동계어)</p>
         </header>
 
         <main class="flex-1 p-4 overflow-y-auto">
             
-            <div class="grid grid-cols-1 gap-2 mb-4">
-                <button class="bg-indigo-600 text-white font-semibold py-2 rounded-lg text-sm transition shadow-sm">Day 17</button>
+            <div class="grid grid-cols-2 gap-2 mb-4">
+                <button onclick="switchDay(18)" id="tab-18" class="tab-btn bg-indigo-600 text-white font-semibold py-2 rounded-lg text-sm transition">Day 18 Plus</button>
+                <button onclick="switchDay(19)" id="tab-19" class="tab-btn bg-slate-100 text-slate-600 font-semibold py-2 rounded-lg text-sm transition">Day 19 Plus</button>
             </div>
 
             <div class="flex justify-end gap-2 mb-4 text-xs font-medium">
@@ -45,47 +46,114 @@
     </div>
 
     <script>
-        const vocabData = [
-            { word: "backbone", meaning: "척추, 등뼈", etymology: "back(등) + bone(뼈). 몸의 중심을 지탱하는 척추를 뜻하며, 비유적으로 조직의 '중추'나 사람의 '기개'를 의미함.", cognates: "backboned (척추가 있는), backboneless (줏대 없는)" },
-            { word: "injection", meaning: "주사", etymology: "in-(안으로) + ject(던지다, 넣다) + ion. 피부나 근육 조직 안으로 약체를 강하게 '밀어 넣는 행위'.", cognates: "inject (주사하다, 주입하다), injector (주입기)" },
-            { word: "heal up", meaning: "상처가 완치되다", etymology: "heal(온전하게 만들다) + 부사 up(완전히). 쪼개지고 다친 상처가 새살로 덮여 완전히 원래 상태로 치유됨.", cognates: "healing (치유), health (건강)" },
-            { word: "recovery", meaning: "회복", etymology: "re-(다시) + 라틴어 capere(잡다)에서 파생. 질병이나 사고로 잃어버렸던 건강과 체력을 '다시 붙잡아 찾아옴'.", cognates: "recover (회복하다), recoverable (회복 가능한)" },
-            { word: "prescription", meaning: "처방", etymology: "pre-(미리, 사전에) + script(쓰다) + ion. 약을 조제하기 전에 의사가 환자에게 필요한 약 성분을 '미리 글로 적어두는 것'.", cognates: "prescribe (처방하다, 규정하다), prescriptive (지시적인)" },
-            { word: "vision, eyesight", meaning: "시각, 시력", etymology: "vision은 라틴어 videre(보다), eyesight는 eye(눈) + sight(보는 능력). 눈으로 사물을 식별하고 인지할 수 있는 신체적 역량.", cognates: "visual (시각의), visible (눈에 보이는)" },
-            { word: "allergic", meaning: "알레르기의", etymology: "그리스어 allos(다른, 변형된) + ergon(반응, 작업). 특정 물질에 대해 면역계가 일반 사람과 '다르게 과민 반응하는 것'에서 유래.", cognates: "allergy (알레르기), allergen (알레르기 유발 물질)" },
-            { word: "get well, get better", meaning: "치유되다, 치료하다, 고치다", etymology: "well/better(더 좋은 건강 상태)를 get(획득하다). 병세가 호전되어 신체 기능이 정상 궤도로 올라서는 상태.", cognates: "well-being (웰빙, 행복)" },
-            { word: "physically challenged", meaning: "장애를 입은, 장애의", etymology: "physically(신체적으로) + challenged(도전에 직면한). '장애인'을 완곡하게 표현한 현대적 언어학적 결합.", cognates: "physical (신체의), challenge (도전)" },
-            { word: "emergency room (ER)", meaning: "응급실", etymology: "emergency(돌발 위기 상황) + room(방). 급성 질환이나 치명적인 외상을 입은 환자를 즉각 치료하기 위해 마련된 병원 내 공간.", cognates: "emerge (나타나다)" },
-            { word: "disability", meaning: "장애", etymology: "dis-(부정/반대) + ability(능력). 신체적 또는 정신적 손상으로 인해 일상적인 활동 능력이 일정 부분 제한된 상태.", cognates: "disable (장애를 갖게 하다), able (할 수 있는)" },
-            { word: "take in", meaning: "소화하다", etymology: "take(잡아취하다) + in(안으로). 음식이나 영양소, 혹은 지식을 몸과 머리 안으로 받아들여 자기 것으로 흡수하는 행위.", cognates: "intake (섭취)" },
-            { word: "infect", meaning: "감염시키다", etymology: "in-(안으로) + 라틴어 facere(만들다/염색하다). 병균이나 바이러스가 신체 내부로 침투하여 유해한 상태를 유발하거나 전염시킴.", cognates: "infection (감염), infectious (전염성의)" },
-            { word: "emergent", meaning: "긴급한, 응급의", etymology: "e-(밖으로) + merge(잠기다/떠오르다). 물속에 잠겨 있던 위협적인 돌발 상황이 수면 '밖으로 갑자기 솟구쳐 오른' 양상.", cognates: "emergency (비상사태), emerge (출현하다)" },
-            { word: "medical examination", meaning: "건강 검진", etymology: "medical(의학의) + examination(조사/시험). 질병의 예방 및 조기 발견을 위해 몸 전체를 의학적으로 정밀하게 살피는 과정.", cognates: "examine (조사하다), examiner (검사관)" },
-            { word: "get a bruise", meaning: "타박상을 입다", etymology: "get(얻다) + bruise(고대 영어 brysan-부수다/찧다). 외부 충격으로 인해 피부 내부의 미세혈관이 터져 멍이 드는 상태.", cognates: "bruised ( 멍든)" },
-            { word: "worse", meaning: "악화된, 더 심한", etymology: "고대 영어 wyrs(더 나쁜)에서 유래. 질병의 증상이나 상태가 기존의 기준점보다 더 부정적인 방향으로 나아간 상태.", cognates: "worsen (악화되다)" },
-            { word: "crisis, danger", meaning: "비상사태, 위급", etymology: "crisis는 그리스어 krinein(분별하다/결정하다)에서 유래하여 생사가 갈리는 중대한 전환점, danger는 해를 입을 수 있는 위험 요인.", cognates: "critical (비판적인, 중대한)" },
-            { word: "sign, mark", meaning: "징후, 증상", etymology: "라틴어 signum(표시, 신호)에서 유래. 몸 내부의 질병이나 이상 상태가 겉으로 드러나 보이는 객관적인 지표.", cognates: "signal (신호), signature (서명)" },
-            { word: "be in good condition", meaning: "건강 상태가 좋다", etymology: "condition은 라틴어 condicere(함께 합의하다/상태). 신체의 모든 장기와 기능이 조화롭게 잘 맞물려 최상의 효율을 내는 상태.", cognates: "conditional (조건부의)" },
-            { word: "physical", meaning: "신체의, 육체의", etymology: "그리스어 physis(자연, 물질적 본질)에서 유래. 정신이나 영혼과 대비되는, 만질 수 있고 존재하는 인간의 물질적 몸.", cognates: "physician (내과의사), physics (물리학)" },
-            { word: "insanitary", meaning: "비위생적인", etymology: "in-(부정/반대) + sanitary(위생적인). 환경이나 가사 상태가 깨끗하지 못하여 병균이 번식하고 질병을 유발할 위험이 높은.", cognates: "sanitary (위생의), sanity (온전한 정신)" },
-            { word: "injury", meaning: "상처", etymology: "in-(부정/반대) + 라틴어 jus(법/권리). 원래 타인의 권리를 침해하는 가해 행위에서 유래하여, 신체에 입은 물리적 타격과 손상을 뜻함.", cognates: "injure (부상을 입히기), injurious (해로운)" },
-            { word: "dental clinic", meaning: "치과", etymology: "라틴어 dens(이빨) + clinic(그리스어 kline-침대/병상). 치아 및 구강 구조의 질환을 전문적으로 예방하고 치료하는 의료 기관.", cognates: "dentist (치과의사), dental (치아의)" },
-            { word: "strain oneself", meaning: "무리하다, 무리하여 건강을 해치다", etymology: "strain(라틴어 stringere-팽팽하게 잡아당기다). 자신의 신체적·정신적 한계선 이상으로 에너지를 과도하게 쥐어짜 내어 몸을 상하게 함.", cognates: "strainer (여과기), constrained (강요된)" },
-            { word: "infectious", meaning: "전염성의", etymology: "infect(균을 침투시키다) + ious(가득 찬). 바이러스나 박테리아가 공기, 접촉 등을 통해 타인의 신체로 쉽게 전파되는 특성.", cognates: "infection (감염), infectiously (전염성 있게)" },
-            { word: "sensitivity", meaning: "알레르기, 과민증", etymology: "라틴어 sentire(느끼다) + itivty. 외부의 미세한 자극이나 특정 항원에 대해 몸이 지나치게 민감하게 감지하고 반응하는 성질.", cognates: "sensitive (민감한), sense (감각)" },
-            { word: "have good sight", meaning: "시력이 좋다", etymology: "have(가지다) + sight(고대 영어 gesiht-보는 능력). 안구의 조절 기능과 망막의 상태가 우수하여 멀고 가까운 사물을 선명하게 잘 보는 상태.", cognates: "sightseeing (관광)" },
-            { word: "sanitate", meaning: "위생적으로 하다", etymology: "라틴어 sanitas(건강, 온전함)에서 파생. 공공장소나 주거 환경에서 병균을 제거하고 청결을 유지하여 건강한 환경을 구축하다.", cognates: "sanitation (위생 시설), sanitary (위생의)" },
-            { word: "immunity", meaning: "면역", etymology: "im-(부정/면제) + 라틴어 munus(의무, 세금). 원래 국가적 의무나 세금을 '면제받다'에서 유래하여, 외부 병원균의 공격으로부터 몸이 보호받는 상태.", cognates: "immune (면역성이 있는), immunize (면역력을 갖게 하다)" },
-            { word: "digestion", meaning: "소화", etymology: "di-(사방으로) + 라틴어 gerere(나르다, 운반하다) + tion. 섭취한 음식물을 위장관에서 분해하여 사방의 세포로 영양소를 나누어 보내는 과정.", cognates: "digest (소화하다, 요약하다), digestive (소화의)" },
-            { word: "mental illness", meaning: "정신질환", etymology: "mental(라틴어 mens-마음/이성) + illness(질병). 신체적 상처와 대비되는, 뇌 기능이나 마음의 영역에서 발생하여 일상을 방해하는 심리적·정신적 장애.", cognates: "mentality (정신성), ill (아픈)" }
-        ];
+        const vocabData = {
+            18: [
+                { word: "enrichment", meaning: "풍부하게 함, 비옥화", etymology: "en-(만들다) + rich(풍부한) + ment. 어떤 대상에 가치나 영양분을 더해 질적으로 한층 더 풍성하게 만드는 과정.", cognates: "enrich (풍부하게 하다), rich (부유한)" },
+                { word: "specific", meaning: "구체적인", etymology: "라틴어 species(종류, 외관) + facere(만들다). 막연하지 않고 특정 종류나 형태를 콕 집어 명확히 보여주는 상태.", cognates: "specify (명시하다), specifically (구체적으로), specification (사양)" },
+                { word: "innovation", meaning: "혁신, 획기적인 것", etymology: "in-(안으로) + novus(새로운) + ation. 기존의 체제나 방식 내부를 완전히 새롭게 뜯어고치는 행위.", cognates: "innovate (혁신하다), innovative (혁신적인), innovator (혁신가)" },
+                { word: "pessimistic", meaning: "비관적인", etymology: "라틴어 pessimus(최악의 것)에서 유래. 상황의 전개나 미래를 가장 어둡고 부정적인 관점으로 바라보는 성향.", cognates: "pessivism (비관주의), pessimist (비관주의자)" },
+                { word: "substance, matter", meaning: "물질, 재료", etymology: "substance는 sub(아래에) + stare(서 있다), 눈에 보이는 현상 아래에 존재하는 본질적 물질. matter는 라틴어 materia(원료).", cognates: "substantial (상당한, 실질적인), materialize (구체화되다)" },
+                { word: "disassemble", meaning: "분해하다", etymology: "dis-(반대, 분리) + as-(~로) + semble(모으다). 하나로 결합되어 있던 기계나 구조물을 조각조각 따로 떼어내는 행위.", cognates: "assemble (조립하다), assembly (조립, 집회)" },
+                { word: "entrepreneur", meaning: "(특히 모험적인) 사업가 [기업가]", etymology: "프랑스어 entreprendre(착수하다, 시도하다)에서 유래. 위험을 감수하고 새로운 비즈니스를 개척하는 주체.", cognates: "entrepreneurial (기업가적인), entrepreneurship (기업가 정신)" },
+                { word: "emergency", meaning: "위기", etymology: "e-(밖으로) + merge(잠기다) + ency. 예기치 못했던 위험이나 위박한 상황이 수면 위로 갑자기 솟구쳐 오른 상태.", cognates: "emergent (긴급한), emerge (출현하다)" },
+                { word: "investment", meaning: "투자", etymology: "in-(안에) + vest(옷을 입히다/권리를 주다) + ment. 자본을 투입해 장래의 이익을 추구하는 행위.", cognates: "invest (투자하다), investor (투자자)" },
+                { word: "group", meaning: "(가축의) 떼, 무리", etymology: "이탈리아어 gruppo(매듭, 무리)에서 유래. 한 울타리나 공간 안에 모여 있는 동물이나 사람의 집합체.", cognates: "grouping (분류, 그룹화)" },
+                { word: "exceed", meaning: "초월하다. ~보다 낫다", etymology: "ex-(밖으로) + cedere(가다). 정해진 선이나 한계치 바깥으로 넘어가다, 혹은 타인보다 능력이 앞서다.", cognates: "excess (과잉), excessive (과도한), exceedingly (대단히)" },
+                { word: "business", meaning: "기업, 회사", etymology: "busy(바쁜) + ness. 끊임없이 바쁘게 움직이며 재화나 서비스를 생산하고 거래하는 상업적 조직체.", cognates: "businessman (사업가)" },
+                { word: "contract", meaning: "수축하다", etymology: "con-(함께) + tract(당기다). 사방의 끝을 중심을 향해 한데 꽉 잡아당겨 부피나 크기를 줄어들게 만들다.", cognates: "contraction (수축), contractor (계약자), extract (추출하다)" },
+                { word: "provider", meaning: "공급자", etymology: "pro-(앞에) + videre(보는) + er. 상대방에게 필요한 것이 무엇인지 미리 앞서 내다보고 물건이나 서비스를 대주는 사람.", cognates: "provide (공급하다), provision (공급, 준비)" },
+                { word: "build", meaning: "건설하다. 조립하다", etymology: "고대 영어 byldan(집을 짓다)에서 유래. 기초부터 시작하여 재료를 쌓아 올려 하나의 완전한 구조물을 완성하는 행위.", cognates: "builder (건축가), building (건물)" },
+                { word: "grassland, meadow", meaning: "목초지", etymology: "grassland는 grass(풀) + land(땅). meadow는 고대 영어 mæd(풀을 베는 곳). 가축의 먹이가 되는 풀이 넓게 자라는 땅.", cognates: "grass (풀), meadowy (목초지가 많은)" },
+                { word: "farm", meaning: "경작하다. 재배하다", etymology: "라틴어 firma(고정된 계약/임대료)에서 유래. 토지를 활용하여 농작물을 기르고 돌보는 행위.", cognates: "farmer (농부), farming (농업)" },
+                { word: "cultivation", meaning: "경작", etymology: "라틴어 colere(거주하다, 돌보다, 경작하다) + ation. 땅을 갈고 보살펴 식물이 잘 자랄 수 있도록 가꾸는 과정.", cognates: "cultivate (경작하다), cultivated (교양 있는)" },
+                { word: "full-scale", meaning: "전면적인, 본격적인", etymology: "full(가득 찬) + scale(눈금, 규모). 축소하거나 생략하는 부분 없이 원래 기획한 원래의 규모 그대로 전격 실행하는 양상.", cognates: "scale (규모, 저울)" },
+                { word: "exportable", meaning: "수출할 수 있는", etymology: "ex-(밖으로) + port(항구) + able(할 수 있는). 국내 항구 밖으로 물건을 실어 보내 타국에 판매하기에 적합한.", cognates: "export (수출하다), exportation (수출)" },
+                { word: "pollute", meaning: "오염시키다", etymology: "라틴어 pol-(앞에) + luere(더럽히다). 깨끗한 자연이나 환경에 유해한 물질을 흘려보내 탁하고 지저분하게 망치다.", cognates: "pollution (오염), pollutant (오염 물질)" },
+                { word: "materially", meaning: "물질적으로", etymology: "라틴어 materia(원료) + ly. 정신적인 영역과 대비되는, 구체적인 물건, 재산, 돈의 측면에서.", cognates: "material (물질, 재료), materialism (물질주의)" },
+                { word: "livestock", meaning: "가축", etymology: "live(살아있는) + stock(자산, 저장물). 농가에서 경제적 이득을 얻기 위해 자산으로 기르는 소, 돼지 등의 동물.", cognates: "stock (재고, 주식)" },
+                { word: "farming", meaning: "농업", etymology: "farm(농장) + ing. 토지를 활용하여 곡물을 재배하거나 가축을 사육하여 식량을 생산하는 산업 활동.", cognates: "farmhouse (농가)" },
+                { word: "raw material", meaning: "원료, 소재", etymology: "raw(날것의) + material(물질). 제품을 가공하거나 제조하기 전, 자연에서 채취한 가공되지 않은 상태의 기본 물질.", cognates: "rawness (날것 상태)" },
+                { word: "optimism", meaning: "낙관주의", etymology: "라틴어 optimus(최선, 최고) + ism. 세상의 모든 일이 결국 가장 좋은 방향으로 흘러갈 것이라고 믿는 긍정적인 생각 시스템.", cognates: "optimistic (낙관적인), optimist (낙관주의자)" },
+                { word: "concrete evidence", meaning: "구체적인 증거", etymology: "concrete는 형태가 단단히 굳어진 것. evidence는 밖으로 명확히 드러난 사실. 반박 불가능한 명백한 물증.", cognates: "concrete (구체적인), evident (명백한)" },
+                { word: "produce", meaning: "발생시키다", etymology: "pro-(앞으로) + ducere(이끌다). 자극이나 원인을 제공하여 없던 결과나 현상을 눈앞에 이끌어내다.", cognates: "production (생산), product (제품), producer (생산자)" },
+                { word: "supply", meaning: "공급하다", etymology: "sub-(아래에서 위로) + plere(채우다). 부족한 부분을 아래에서부터 채워 넣어 상대방이 쓸 수 있게 대주다.", cognates: "supplier (공급업체), supplement (보충물)" },
+                { word: "optimist", meaning: "낙관주의자", etymology: "라틴어 optimus(최고의 것) + ist(사람). 힘든 상황 속에서도 절망하지 않고 좋은 면을 먼저 보며 희망을 품는 사람.", cognates: "optimize (최적화하다)" },
+                { word: "percentage", meaning: "비율", etymology: "per(~당) + cent(100) + age. 전체 수량을 100으로 가정했을 때, 특정 수량이 차지하는 비중을 나타내는 단위.", cognates: "percent (퍼센트), cent (100분지 1)" },
+                { word: "exportation", meaning: "수출", etymology: "ex-(밖으로) + port(항구) + ation. 자국 항구 밖으로 상품을 실어 보내 다른 나라에 판매하는 무역 행위 전반.", cognates: "porter (짐꾼), passport (여권)" },
+                { word: "gather", meaning: "모으다", etymology: "고대 영어 gadrian(함께 가져오다)에서 유래. 사방에 흩어져 있는 물건이나 사람들을 한 장소로 끌어모으는 행위.", cognates: "gathering (모임, 집회)" },
+                { word: "continuous", meaning: "일정한, 지속적인", etymology: "con-(함께) + tenere(유지하다) + ous. 도중에 끊어지거나 멈추는 일 없이 하나의 선처럼 일관되게 계속 이어지는.", cognates: "continue (계속하다), continuity (연속성)" },
+                { word: "critical", meaning: "비판적인, 위태로운", etymology: "그리스어 krinein(분별하다, 판단하다)에서 유래. 잘잘못을 엄격히 따지는 뜻과, 위태로운 순간이라는 뜻을 동시에 가짐.", cognates: "critic (비평가), criticize (비판하다), crisis (위기)" },
+                { word: "feed", meaning: "(가축이) 풀을 뜯어 먹다", etymology: "고대 영어 fedan(음식을 주다, 먹다)에서 유래. 가축이 초지에서 스스로 풀을 뜯거나 먹이를 먹는 행동.", cognates: "food (음식)" },
+                { word: "size", meaning: "규모", etymology: "라틴어 assisa(법정 고정 치수/할당량)의 축약형. 물건의 크기나 조직, 사업 등이 차지하고 있는 부피의 크기.", cognates: "sizeable (꽤 큰)" },
+                { word: "assembly", meaning: "조립", etymology: "ad-(~로) + simul(함께) + y. 따로 떨어져 있던 부품들을 약속된 규칙에 따라 한데 모아 결합하는 과정.", cognates: "assemble (조립하다), assembler (조립공)" },
+                { word: "import", meaning: "수입하다", etymology: "in-(안으로) + port(항구). 외국의 상품을 자국의 항구 안으로 실어 들여와 국내 시장에 유통시키다.", cognates: "important (중요한), importation (수입)" }
+            ],
+            19: [
+                { word: "risky", meaning: "위험한", etymology: "라틴어 risicum(절벽, 바다의 암초)에서 유래. 손실이나 부상의 가능성이 높은 상태를 의미함.", cognates: "risk (위험), riskless (안전한)" },
+                { word: "plan, approach", meaning: "전략, 계획", etymology: "plan은 밑그림을 그리는 것, approach는 가까이 접근해 들어가는 구체적 방식을 결합한 형태.", cognates: "planned (기획된), approachable (접근 가능한)" },
+                { word: "at risk", meaning: "위험한 상태에", etymology: "at(~의 지점에) + risk(위험). 보호받지 못하고 위협이나 위기, 파멸의 가능성에 고스란히 노출되어 있는 처지.", cognates: "risker (모험가)" },
+                { word: "own", meaning: "소유하다. 가지다", etymology: "고대 영어 agan(가지다, 지배하다)에서 유래. 어떤 물건이나 재산에 대해 지배력을 확보하고 있는 상태.", cognates: "owner (소유주), ownership (소유권)" },
+                { word: "economist", meaning: "경제학자", etymology: "oikos(집) + nomos(관리) + ist(전문가). 사회가 자원을 어떻게 배분하고 소비하는지 연구하는 경제 현상 전문가.", cognates: "economy (경제), economics (경제학)" },
+                { word: "estimated sum", meaning: "견적액, 견적 비용", etymology: "estimate(가치를 평가하다) + sum(총합). 일을 진행하기 전 필요한 비용을 미리 계산해 낸 총액.", cognates: "estimation (평가), summary (요약)" },
+                { word: "have an account with", meaning: "~와 거래가 있다. ~에 계좌가 있다", etymology: "account는 계산하다에서 유래. 특정 은행이나 기업의 장부에 내 이름으로 된 계산 구획을 갖고 있음.", cognates: "accountant (회계사)" },
+                { word: "current", meaning: "통용되는; 현재의", etymology: "라틴어 currere(달리다)에서 유래. 지금 이 순간 물 흐르듯 시장에서 널리 흘러 다니고(통용) 있는 상태.", cognates: "currency (통화), currently (현재)" },
+                { word: "employed", meaning: "고용된", etymology: "in-(안에) + plicare(접다/연루시키다). 어떤 기업이나 조직의 업무 테두리 안으로 들어가 일하는 상태.", cognates: "employ (고용하다), employer (고용주), employee (피고용인)" },
+                { word: "accountant", meaning: "회계사", etymology: "ad(~에) + computare(계산하다) + ant(전문가). 기업의 돈이 들고 나는 모든 내역을 장부에 계산하여 기록하는 사람.", cognates: "accounting (회계)" },
+                { word: "shares", meaning: "주식, 주", etymology: "share(몫을 나누다)의 복수형. 기업의 전체 자본금 중에서 내가 쪼개어 소유하고 있는 지분 증서.", cognates: "shareholder (주주)" },
+                { word: "expenditure", meaning: "지출", etymology: "ex-(밖으로) + pendere(돈을 지불하다) + iture. 특정 목적을 위해 금전이나 자금을 밖으로 내어 쓰는 행위.", cognates: "expend (소비하다), expense (비용), expensive (비싼)" },
+                { word: "economy", meaning: "경제", etymology: "그리스어 oikonomia(가정 살림 관리)에서 유래. 인간이 살아가는 데 필요한 재화를 생산, 분배, 소비하는 시스템.", cognates: "economize (절약하다), economical (알뜰한)" },
+                { word: "temporarily", meaning: "임시로", etymology: "라틴어 tempus(시간) + ari+ly. 영원히 지속되는 것이 아니라 정해진 특정한 짧은 시간 동안에만 한시적으로.", cognates: "temporary (일시적인)" },
+                { word: "commercial", meaning: "상업의", etymology: "com-(함께) + merx(상품) + ial. 이윤을 얻을 목적으로 상품을 주고받으며 매매하는 활동과 관련된.", cognates: "commerce (상업), merchant (상인)" },
+                { word: "negotiation", meaning: "협상", etymology: "라틴어 neg-(부정) + otium(여가) + ation. 한가하게 쉴 틈 없이 분주하게 서로의 이익 조건을 조율하여 합의하는 과정.", cognates: "negotiate (협상하다), negotiator (협상가)" },
+                { word: "effect", meaning: "결과(물), (구체적인) 성과", etymology: "ex-(밖으로) + facere(만들다). 어떤 원인이나 노력에 의해 바깥으로 만들어져 나타난 구체적인 결과.", cognates: "effective (효과적인), effectively (효과적으로)" },
+                { word: "earnings", meaning: "수입, 소득", etymology: "earn(노동하여 대가를 얻다) + ings. 육체적·정신적 노동이나 투자의 결과로 내 손에 들어오게 된 실제 보상액.", cognates: "earn (벌다)" },
+                { word: "wealth", meaning: "재산, 부", etymology: "well(좋은 상태, 건강) + 명사형 접미사 th. 삶을 윤택하게 만들어주는 물질적 자산이 가득 축적된 상태.", cognates: "wealthy (부유한)" },
+                { word: "latent", meaning: "잠재적인, 발전 가능성이 있는", etymology: "라틴어 latere(숨어 있다)에서 유래. 지금은 겉으로 드러나지 않고 숨어 있으나 발현될 수 있는.", cognates: "latency (잠복기)" },
+                { word: "capitalism", meaning: "자본주의", etymology: "caput(머리/가장 중요한 것) + al + ism. 생산 수단을 가진 개인이 이윤 추구를 목적으로 시장에서 자본을 운용하는 경제 체제.", cognates: "capital (자본, 수도), capitalist (자본가)" },
+                { word: "e-commerce (electronic commerce)", meaning: "전자 상거래", etymology: "electronic(전자의) + commerce(상업). 물리적 매장 없이 디지털 네트워크를 통해 상품을 사고파는 행위.", cognates: "electronic (전자의)" },
+                { word: "evaluate", meaning: "평가하다. 견적하다", etymology: "ex-(밖으로) + valere(가치 있다) + ate. 어떤 대상이 지닌 가치나 비용을 계산하여 밖으로 드러내다.", cognates: "evaluation (평가), value (가치)" },
+                { word: "make a budget", meaning: "예산을 편성하다", etymology: "make(만들다) + budget(가죽 주머니). 앞으로 쓸 도리의 돈을 주머니 속에 미리 계산해 넣어두다.", cognates: "budgetary (예산의)" },
+                { word: "danger, hazard", meaning: "위험, 모험", etymology: "danger는 해를 입기 쉬운 상태. hazard는 주사위 게임에서 유래한 돌발적인 위험을 의미함.", cognates: "dangerous (위험한)" },
+                { word: "possession", meaning: "소유", etymology: "라틴어 potis(능력 있는) + sedere(앉다) + ion. 어떤 물건이나 권리 위에 완전히 자리를 잡고 지배하는 상태.", cognates: "possess (소유하다)" },
+                { word: "possessions", meaning: "재산, 소유물", etymology: "possession(소유)의 복수형. 한 개인이 소유하여 마음대로 활용할 수 있는 모든 물건과 자산들.", cognates: "dispossess (빼앗다)" },
+                { word: "decrease", meaning: "감소하다", etymology: "de-(아래로) + crescere(자라다/증가하다). 수량, 강도, 규모 등이 위로 자라나지 못하고 점점 줄어들다.", cognates: "increase (증가하다)" },
+                { word: "financial", meaning: "경제학의, 경제(상)의 / 재정의", etymology: "라틴어 finis(끝, 결제, 채무 종결)에서 유래. 돈의 흐름을 정산하고 관리하는 금융 및 경제 운영 관련. (원문 29, 31번 통합 배치)", cognates: "finance (재정, 금융)" },
+                { word: "capital punishment", meaning: "사형, 극형", etymology: "capital(caput-머리/생명과 직결된) + punishment(처벌). 죄인의 목을 치는 행위에서 유래한 법적 처벌.", cognates: "punish (처벌하다)" },
+                { word: "unemployment rate", meaning: "실업률", etymology: "un-(부정) + employ(고용) + ment + rate(비율). 일할 의사가 있는 인구 중 일자리를 얻지 못한 사람들의 백분율.", cognates: "unemployed (실업 상태의), rate (비율)" },
+                { word: "expensive", meaning: "값비싼", etymology: "ex-(밖으로) + pendere(돈을 지불하다) + ive. 물건을 사기 위해 밖으로 내보내야 하는 비용의 규모가 큰.", cognates: "expense (비용)" },
+                { word: "fortunate", meaning: "운 좋은", etymology: "라틴어 fortuna(운명의 여신 포르투나) + ate. 내 노력을 떠나 운명의 여신이 행운을 가져다준 상태.", cognates: "fortune (운, 재산)" },
+                { word: "annually", meaning: "매년, 해마다", etymology: "라틴어 annus(해, 1년) + ally. 지구가 태양을 한 바퀴 도는 1년이라는 주기마다 정기적으로 반복하여.", cognates: "annual (연간의)" },
+                { word: "permanent", meaning: "영구적인, 불멸의", etymology: "per-(처음부터 끝까지 완전히) + manere(머물다). 쉽게 변하거나 소멸하지 않고 고유한 형태를 유지하는.", cognates: "permanence (영속성)" },
+                { word: "potentially", meaning: "잠재적으로", etymology: "라틴어 potentia(힘, 능력) + ally. 현재 겉으로 폭발하진 않았으나, 내면에 엄청난 실현 가능성을 품고 있는 양상.", cognates: "potential (잠재력)" },
+                { word: "money, effects", meaning: "자산, 재산", etymology: "money는 화폐, effects는 소유 물품. 한 개인이 소유하여 경제적 가치가 나가는 유무형의 재산 총합.", cognates: "monetary (화폐의)" }
+            ]
+        };
 
+        let currentDay = 18;
         let currentMode = 'list';
         let cardIndex = 0;
 
+        function switchDay(day) {
+            currentDay = day;
+            cardIndex = 0; 
+            
+            const cardInner = document.getElementById('card-inner');
+            if (cardInner) cardInner.classList.remove('card-flipped');
+            
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('bg-indigo-600', 'text-white');
+                btn.classList.add('bg-slate-100', 'text-slate-600');
+            });
+            const activeTab = document.getElementById(`tab-${day}`);
+            activeTab.classList.remove('bg-slate-100', 'text-slate-600');
+            activeTab.classList.add('bg-indigo-600', 'text-white');
+
+            renderContent();
+        }
+
         function switchMode(mode) {
             currentMode = mode;
-            cardIndex = 0;
+            cardIndex = 0; 
             const listBtn = document.getElementById('mode-list');
             const cardBtn = document.getElementById('mode-card');
 
@@ -102,10 +170,11 @@
         function renderContent() {
             const container = document.getElementById('vocab-container');
             const footer = document.getElementById('app-footer');
+            const data = vocabData[currentDay];
 
             if (currentMode === 'list') {
                 footer.innerHTML = `© 얼룩말영어학원 | 스마트 단어 학습 시스템`;
-                container.innerHTML = vocabData.map((item, idx) => `
+                container.innerHTML = data.map((item, idx) => `
                     <div class="bg-slate-50 p-4 rounded-xl border border-slate-100 shadow-sm">
                         <div class="flex justify-between items-start">
                             <span class="text-xs text-indigo-500 font-bold uppercase tracking-wider">No. ${idx + 1}</span>
@@ -123,12 +192,12 @@
                     </div>
                 `).join('');
             } else {
-                const item = vocabData[cardIndex];
+                const item = data[cardIndex];
                 footer.innerHTML = `
                     <div class="flex justify-between items-center px-4 py-1">
                         <button onclick="prevCard()" class="px-4 py-2 bg-slate-200 text-slate-700 font-bold rounded-lg ${cardIndex === 0 ? 'opacity-50 pointer-events-none' : ''}">이전</button>
-                        <span class="font-semibold text-slate-600">${cardIndex + 1} / ${vocabData.length}</span>
-                        <button onclick="nextCard()" class="px-4 py-2 bg-indigo-600 text-white font-bold rounded-lg ${cardIndex === vocabData.length - 1 ? 'opacity-50 pointer-events-none' : ''}">다음</button>
+                        <span class="font-semibold text-slate-600">${cardIndex + 1} / ${data.length}</span>
+                        <button onclick="nextCard()" class="px-4 py-2 bg-indigo-600 text-white font-bold rounded-lg ${cardIndex === data.length - 1 ? 'opacity-50 pointer-events-none' : ''}">다음</button>
                     </div>
                 `;
                 
@@ -162,7 +231,7 @@
         }
 
         function nextCard() {
-            if (cardIndex < vocabData.length - 1) {
+            if (cardIndex < vocabData[currentDay].length - 1) {
                 cardIndex++;
                 renderContent();
             }
@@ -175,8 +244,8 @@
             }
         }
 
-        // Init Day 17
-        renderContent();
+        // Init Day 18
+        switchDay(18);
     </script>
 </body>
 </html>
