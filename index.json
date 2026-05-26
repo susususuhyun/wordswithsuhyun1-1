@@ -1,0 +1,317 @@
+[
+  {
+    "id": 1,
+    "word": "innocent",
+    "meaning": "무고한",
+    "etymology": "in-(not) + nocere(harm) → 해치지 않는",
+    "cognates": ["innocence", "noxious"]
+  },
+  {
+    "id": 2,
+    "word": "arrestment",
+    "meaning": "체포",
+    "etymology": "ad-(to) + restare(stop) → 멈춰 세우다",
+    "cognates": ["arrest", "rest"]
+  },
+  {
+    "id": 3,
+    "word": "evidently",
+    "meaning": "명백히",
+    "etymology": "ex-(out) + videre(see) → 밖으로 보이는",
+    "cognates": ["evident", "evidence"]
+  },
+  {
+    "id": 4,
+    "word": "restrictive",
+    "meaning": "제한하는",
+    "etymology": "re-(back) + stringere(bind) → 뒤로 묶는",
+    "cognates": ["restrict", "strict"]
+  },
+  {
+    "id": 5,
+    "word": "deliberate",
+    "meaning": "의도적인, 계획된",
+    "etymology": "de-(down) + librare(weigh) → 저울질하다",
+    "cognates": ["deliberately", "equilibrium"]
+  },
+  {
+    "id": 6,
+    "word": "guilt",
+    "meaning": "유죄",
+    "etymology": "고대 영어 gylt (범죄)",
+    "cognates": ["guilty", "guiltless"]
+  },
+  {
+    "id": 7,
+    "word": "robbery",
+    "meaning": "강도질, 강탈",
+    "etymology": "고대 프랑스어 rober (훔치다)",
+    "cognates": ["rob", "robber"]
+  },
+  {
+    "id": 8,
+    "word": "offender",
+    "meaning": "범인, 범죄자",
+    "etymology": "ob-(against) + fendere(strike) → 부딪히는 자",
+    "cognates": ["offend", "offense"]
+  },
+  {
+    "id": 9,
+    "word": "investigation",
+    "meaning": "조사",
+    "etymology": "in-(into) + vestigare(track) → 발자국을 쫓다",
+    "cognates": ["investigate", "vestige"]
+  },
+  {
+    "id": 10,
+    "word": "conviction",
+    "meaning": "유죄 선고, 확신",
+    "etymology": "con-(together) + vincere(conquer) → 완전히 이기다",
+    "cognates": ["convict", "convince"]
+  },
+  {
+    "id": 11,
+    "word": "break",
+    "meaning": "위반하다",
+    "etymology": "고대 영어 brecan (부수다)",
+    "cognates": ["breakage", "brake"]
+  },
+  {
+    "id": 12,
+    "word": "admission",
+    "meaning": "인정",
+    "etymology": "ad-(to) + mittere(send) → 안으로 보내다",
+    "cognates": ["admit", "mission"]
+  },
+  {
+    "id": 13,
+    "word": "prohibit",
+    "meaning": "금하다",
+    "etymology": "pro-(forward) + habere(hold) → 앞에서 막다",
+    "cognates": ["prohibition", "habit"]
+  },
+  {
+    "id": 14,
+    "word": "control",
+    "meaning": "규제하다. 통제하다",
+    "etymology": "contra-(against) + rotulus(roll) → 대조 점검하다",
+    "cognates": ["controller", "roll"]
+  },
+  {
+    "id": 15,
+    "word": "obvious, plain",
+    "meaning": "분명한, 명백한",
+    "etymology": "ob-(in the way of) + via(way) → 길 위에 있는",
+    "cognates": ["obviously", "via"]
+  },
+  {
+    "id": 16,
+    "word": "stop",
+    "meaning": "막다. ~하지 못하게 하다",
+    "etymology": "라틴어 stuppare (막다)",
+    "cognates": ["stoppage", "stopper"]
+  },
+  {
+    "id": 17,
+    "word": "deceptive",
+    "meaning": "속이는",
+    "etymology": "de-(down) + capere(take) → 낚아채다",
+    "cognates": ["deceive", "capture"]
+  },
+  {
+    "id": 18,
+    "word": "permit",
+    "meaning": "허가하다",
+    "etymology": "per-(through) + mittere(send) → 통과시키다",
+    "cognates": ["permission", "admit"]
+  },
+  {
+    "id": 19,
+    "word": "accidental",
+    "meaning": "우연한",
+    "etymology": "ad-(to) + cadere(fall) → 떨어지다, 발생하다",
+    "cognates": ["accident", "incident"]
+  },
+  {
+    "id": 20,
+    "word": "rob",
+    "meaning": "강탈하다",
+    "etymology": "고대 프랑스어 rober (훔치다)",
+    "cognates": ["robbery", "robber"]
+  },
+  {
+    "id": 21,
+    "word": "investigator",
+    "meaning": "수사관",
+    "etymology": "in-(into) + vestigare(track) → 자취를 쫓는 자",
+    "cognates": ["investigate", "vestige"]
+  },
+  {
+    "id": 22,
+    "word": "suspicion",
+    "meaning": "의심, 혐의",
+    "etymology": "sub-(under) + specere(look) → 아래에서 올려다보다",
+    "cognates": ["suspect", "specific"]
+  },
+  {
+    "id": 23,
+    "word": "commit suicide",
+    "meaning": "자살하다",
+    "etymology": "sui-(oneself) + caedere(kill) → 자신을 해치다",
+    "cognates": ["suicide", "homicide"]
+  },
+  {
+    "id": 24,
+    "word": "cheat",
+    "meaning": "속이다. 기만하다",
+    "etymology": "고대 프랑스어 eschete (몰수) → 속여 빼앗다",
+    "cognates": ["cheater"]
+  },
+  {
+    "id": 25,
+    "word": "deception",
+    "meaning": "속임, 기만, 거짓",
+    "etymology": "de-(down) + capere(take) → 속여 빼앗음",
+    "cognates": ["deceive", "deceptive"]
+  },
+  {
+    "id": 26,
+    "word": "regulation",
+    "meaning": "규제",
+    "etymology": "regula(rule) → 규칙화",
+    "cognates": ["regulate", "regular"]
+  },
+  {
+    "id": 27,
+    "word": "violation",
+    "meaning": "위반",
+    "etymology": "violare(treat with violence) → 폭력적으로 다루다",
+    "cognates": ["violate", "violent"]
+  },
+  {
+    "id": 28,
+    "word": "identification",
+    "meaning": "신원 확인, 신분증",
+    "etymology": "idem(same) + facere(make) → 동일함을 증명함",
+    "cognates": ["identify", "identical"]
+  },
+  {
+    "id": 29,
+    "word": "suspicious",
+    "meaning": "의심스러운",
+    "etymology": "sub-(under) + specere(look) → 미심쩍게 보는",
+    "cognates": ["suspect", "suspicion"]
+  },
+  {
+    "id": 30,
+    "word": "criminal",
+    "meaning": "유죄의",
+    "etymology": "crimen(judgment/crime) → 판결 대상이 되는",
+    "cognates": ["crime", "criminology"]
+  },
+  {
+    "id": 31,
+    "word": "confession",
+    "meaning": "자백",
+    "etymology": "con-(together) + fateri(admit) → 모두 인정하다",
+    "cognates": ["confess", "profess"]
+  },
+  {
+    "id": 32,
+    "word": "deny",
+    "meaning": "부인하다",
+    "etymology": "de-(completely) + negare(say no) → 전면 거절하다",
+    "cognates": ["denial", "negative"]
+  },
+  {
+    "id": 33,
+    "word": "inquiry",
+    "meaning": "질문, 조사",
+    "etymology": "in-(into) + quaerere(ask) → 안으로 깊게 묻다",
+    "cognates": ["inquire", "require"]
+  },
+  {
+    "id": 34,
+    "word": "investigate",
+    "meaning": "조사하다",
+    "etymology": "in-(into) + vestigare(track) → 자취를 쫓다",
+    "cognates": ["investigation", "vestige"]
+  },
+  {
+    "id": 35,
+    "word": "forbidden",
+    "meaning": "금지된",
+    "etymology": "for-(away) + beodan(command) → 멀리하도록 명령하다",
+    "cognates": ["forbid", "bid"]
+  },
+  {
+    "id": 36,
+    "word": "capture",
+    "meaning": "(덫으로) 잡다",
+    "etymology": "capere(take) → 낚아채다",
+    "cognates": ["captive", "accept"]
+  },
+  {
+    "id": 37,
+    "word": "restriction",
+    "meaning": "제한",
+    "etymology": "re-(back) + stringere(bind) → 뒤로 묶어둠",
+    "cognates": ["restrict", "strict"]
+  },
+  {
+    "id": 38,
+    "word": "prevention",
+    "meaning": "방지",
+    "etymology": "prae-(before) + venire(come) → 미리 와서 막다",
+    "cognates": ["prevent", "convention"]
+  },
+  {
+    "id": 39,
+    "word": "limit",
+    "meaning": "제한하다",
+    "etymology": "limes(boundary) → 경계선을 긋다",
+    "cognates": ["limitless", "limitation"]
+  },
+  {
+    "id": 40,
+    "word": "offensive",
+    "meaning": "무례한",
+    "etymology": "ob-(against) + fendere(strike) → 거슬리게 부딪히는",
+    "cognates": ["offend", "offense"]
+  },
+  {
+    "id": 41,
+    "word": "sentence",
+    "meaning": "유죄를 선고하다",
+    "etymology": "sentire(feel/opinion) → 공식적인 의견(판결)을 내다",
+    "cognates": ["sentiment", "sense"]
+  },
+  {
+    "id": 42,
+    "word": "intentionally",
+    "meaning": "고의로",
+    "etymology": "in-(toward) + tendere(stretch) → 마음이 향한 채로",
+    "cognates": ["intent", "tend"]
+  },
+  {
+    "id": 43,
+    "word": "appealing",
+    "meaning": "호소하는, 매력 있는",
+    "etymology": "ad-(to) + pellere(drive) → 마음을 강하게 끌다",
+    "cognates": ["appeal", "compel"]
+  },
+  {
+    "id": 44,
+    "word": "evidence",
+    "meaning": "증거",
+    "etymology": "ex-(out) + videre(see) → 밖으로 분명히 보여주는 것",
+    "cognates": ["evident", "video"]
+  },
+  {
+    "id": 45,
+    "word": "intention",
+    "meaning": "의도, 목적",
+    "etymology": "in-(toward) + tendere(stretch) → 마음을 뻗음",
+    "cognates": ["intent", "pretend"]
+  }
+]
