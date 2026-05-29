@@ -1,12 +1,817 @@
-<div class="card">
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>얼룩말영어학원 단어장 - 중등고난도 24</title>
+    <style>
+        :root {
+            --bg-color: #f3f4f6;
+            --card-bg: #ffffff;
+            --primary-color: #3b82f6;
+            --text-main: #1f2937;
+            --text-sub: #4b5563;
+            --ety-bg: #eff6ff;
+            --cog-bg: #fdf2f8;
+            --border-color: #e5e7eb;
+            --header-bg: #ffffff;
+        }
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; 
+            background-color: var(--bg-color); 
+            margin: 0; 
+            padding: 0; 
+            color: var(--text-main);
+        }
+        
+        /* 상단 헤더 */
+        .header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background-color: var(--header-bg);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border-bottom: 1px solid var(--border-color);
+            padding: 16px 0;
+            text-align: center;
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: var(--primary-color);
+        }
+
+        /* 메인 콘텐츠 영역 */
+        .content-area {
+            padding: 15px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        /* 단어 카드 스타일 */
+        .card { 
+            background: var(--card-bg); 
+            border-radius: 12px; 
+            padding: 18px; 
+            margin-bottom: 16px; 
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            border: 1px solid var(--border-color);
+        }
+        
+        /* 헤더 스타일 명시적 정의 */
+        .word-header { 
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 8px;
+        }
+        
+        .word-num { font-size: 0.9rem; color: #9ca3af; font-weight: bold; }
+        .word { font-size: 1.6rem; font-weight: 800; color: #111827; margin-top: 4px; display: block; }
+        .meaning { font-size: 1.1rem; font-weight: 600; color: #dc2626; margin-top: 8px; line-height: 1.4; }
+        
+        /* 토글 버튼 */
+        .toggle-btn {
+            display: block;
+            width: 100%;
+            background-color: #f8fafc;
+            border: 1px solid #e2e8f0;
+            color: #475569;
+            padding: 8px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            margin-top: 14px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        .toggle-btn:active {
+            background-color: #e2e8f0;
+        }
+
+        /* 어원/동계어 숨김 영역 */
+        .details-section {
+            display: none; 
+            margin-top: 12px;
+            border-top: 1px dashed var(--border-color);
+            padding-top: 12px;
+            animation: fadeIn 0.2s ease;
+        }
+        .details-section.show {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .info-box { 
+            border-radius: 8px; 
+            padding: 12px; 
+            margin-bottom: 10px; 
+            font-size: 0.95rem; 
+            line-height: 1.4;
+        }
+        .ety-box { background-color: var(--ety-bg); color: #1e3a8a; }
+        .cog-box { background-color: var(--cog-bg); color: #831843; margin-bottom: 0; }
+        .label { 
+            display: inline-block; 
+            font-size: 0.75rem; 
+            font-weight: 800; 
+            padding: 2px 6px; 
+            border-radius: 4px; 
+            margin-right: 6px; 
+            margin-bottom: 4px;
+        }
+        .ety-label { background: #bfdbfe; color: #1e40af; }
+        .cog-label { background: #fbcfe8; color: #9d174d; }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        중등고난도 24
+    </div>
+
+    <div class="content-area">
+        
+        <div class="card">
             <div class="word-header">
-                <span class="word-num">36</span>
-                <span class="word">duty</span>
-                <div class="meaning">세금</div>
+                <span class="word-num">01</span>
+                <span class="word">customs office</span>
+                <div class="meaning">세관 [cite: 179, 180]</div>
             </div>
             <button class="toggle-btn" onclick="toggleDetails(this)">어원/동계어 보기 ▼</button>
             <div class="details-section">
-                <div class="info-box ety-box"><span class="label ety-label">어원</span>due(마땅히 내야 할 것) + -ty(명사형 어미) → (국가에) 마땅히 지불해야 하는 세금이나 의무</div>
-                <div class="info-box cog-box"><span class="label cog-label">동계어</span>due, debt</div>
+                <div class="info-box ety-box"><span class="label ety-label">어원</span>custom(관습, 관세) + office(사무소) → 국가의 오랜 관습에 따라 세금을 걷는 곳</div>
+                <div class="info-box cog-box"><span class="label cog-label">동계어</span>customer, accustom, official</div>
             </div>
         </div>
+
+        <div class="card">
+            <div class="word-header">
+                <span class="word-num">02</span>
+                <span class="word">Civil War</span>
+                <div class="meaning">미국 남북 전쟁 [cite: 181, 182]</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleDetails(this)">어원/동계어 보기 ▼</button>
+            <div class="details-section">
+                <div class="info-box ety-box"><span class="label ety-label">어원</span>civilis(시민의) + war(전쟁) → 같은 나라 시민들 간의 내전</div>
+                <div class="info-box cog-box"><span class="label cog-label">동계어</span>civil, civilian, civilization</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="word-header">
+                <span class="word-num">03</span>
+                <span class="word">tribal</span>
+                <div class="meaning">종족의, 부족의: 동족적인 [cite: 183, 184]</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleDetails(this)">어원/동계어 보기 ▼</button>
+            <div class="details-section">
+                <div class="info-box ety-box"><span class="label ety-label">어원</span>tribus(부족, 세 개의 갈래) + -al(형용사형 어미)</div>
+                <div class="info-box cog-box"><span class="label cog-label">동계어</span>tribe, tribute</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="word-header">
+                <span class="word-num">04</span>
+                <span class="word">ethnic</span>
+                <div class="meaning">인종의 [cite: 185, 186]</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleDetails(this)">어원/동계어 보기 ▼</button>
+            <div class="details-section">
+                <div class="info-box ety-box"><span class="label ety-label">어원</span>ethnos(국민, 인종) → 특정 문화나 혈통을 공유하는 무리</div>
+                <div class="info-box cog-box"><span class="label cog-label">동계어</span>ethnicity, ethnology</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="word-header">
+                <span class="word-num">05</span>
+                <span class="word">make an attempt</span>
+                <div class="meaning">시도하다 [cite: 187, 188]</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleDetails(this)">어원/동계어 보기 ▼</button>
+            <div class="details-section">
+                <div class="info-box ety-box"><span class="label ety-label">어원</span>attempt (ad- ~로 + temptare 시험하다) → 무언가를 향해 시도해봄</div>
+                <div class="info-box cog-box"><span class="label cog-label">동계어</span>tempt, temptation</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="word-header">
+                <span class="word-num">06</span>
+                <span class="word">tradition</span>
+                <div class="meaning">풍습 [cite: 189, 190]</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleDetails(this)">어원/동계어 보기 ▼</button>
+            <div class="details-section">
+                <div class="info-box ety-box"><span class="label ety-label">어원</span>trans-(건너서) + dare(주다) → 세대를 건너 물려주는 것</div>
+                <div class="info-box cog-box"><span class="label cog-label">동계어</span>traditional, trade, surrender</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="word-header">
+                <span class="word-num">07</span>
+                <span class="word">the same</span>
+                <div class="meaning">같은, 평등한 [cite: 191, 192]</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleDetails(this)">어원/동계어 보기 ▼</button>
+            <div class="details-section">
+                <div class="info-box ety-box"><span class="label ety-label">어원</span>고대 노르드어 samr(동일한, 함께)</div>
+                <div class="info-box cog-box"><span class="label cog-label">동계어</span>some, seem, similar</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="word-header">
+                <span class="word-num">08</span>
+                <span class="word">immigration</span>
+                <div class="meaning">(다른 나라에 살러 오는) 이주[이민], 입국 심사 [cite: 193, 194]</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleDetails(this)">어원/동계어 보기 ▼</button>
+            <div class="details-section">
+                <div class="info-box ety-box"><span class="label ety-label">어원</span>in-(안으로) + migrare(이동하다) → 나라 안으로 들어오는 것</div>
+                <div class="info-box cog-box"><span class="label cog-label">동계어</span>immigrate, migrate, emigration</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="word-header">
+                <span class="word-num">09</span>
+                <span class="word">dominant</span>
+                <div class="meaning">지배적인 [cite: 195, 196]</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleDetails(this)">어원/동계어 보기 ▼</button>
+            <div class="details-section">
+                <div class="info-box ety-box"><span class="label ety-label">어원</span>dominus(주인) + -ant(형용사형) → 주인의 권리를 행사하는</div>
+                <div class="info-box cog-box"><span class="label cog-label">동계어</span>dominate, domain</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="word-header">
+                <span class="word-num">10</span>
+                <span class="word">resident</span>
+                <div class="meaning">거주자 [cite: 197, 198]</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleDetails(this)">어원/동계어 보기 ▼</button>
+            <div class="details-section">
+                <div class="info-box ety-box"><span class="label ety-label">어원</span>re-(뒤에, 정착하여) + sedere(앉다) → 한 곳에 눌러앉은 사람</div>
+                <div class="info-box cog-box"><span class="label cog-label">동계어</span>reside, residence, seat</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="word-header">
+                <span class="word-num">11</span>
+                <span class="word">try</span>
+                <div class="meaning">시도 [cite: 199, 200]</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleDetails(this)">어원/동계어 보기 ▼</button>
+            <div class="details-section">
+                <div class="info-box ety-box"><span class="label ety-label">어원</span>고대 프랑스어 trier(체질하다, 골라내다) → 쓸모가 있는지 시험해보다</div>
+                <div class="info-box cog-box"><span class="label cog-label">동계어</span>trial</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="word-header">
+                <span class="word-num">12</span>
+                <span class="word">emigrate</span>
+                <div class="meaning">타국으로 이주하다 [cite: 201, 202]</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleDetails(this)">어원/동계어 보기 ▼</button>
+            <div class="details-section">
+                <div class="info-box ety-box"><span class="label ety-label">어원</span>ex-(밖으로) + migrare(이동하다) → 밖으로 나가는 이민</div>
+                <div class="info-box cog-box"><span class="label cog-label">동계어</span>emigration, immigrate</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="word-header">
+                <span class="word-num">13</span>
+                <span class="word">use up</span>
+                <div class="meaning">소진시키다 [cite: 203, 204]</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleDetails(this)">어원/동계어 보기 ▼</button>
+            <div class="details-section">
+                <div class="info-box ety-box"><span class="label ety-label">어원</span>구동사 (use 사용하다 + up 완전히 끝까지)</div>
+                <div class="info-box cog-box"><span class="label cog-label">동계어</span>use, useful</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="word-header">
+                <span class="word-num">14</span>
+                <span class="word">equal right</span>
+                <div class="meaning">평등권 [cite: 205, 206]</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleDetails(this)">어원/동계어 보기 ▼</button>
+            <div class="details-section">
+                <div class="info-box ety-box"><span class="label ety-label">어원</span>aequus(평평한, 공정한) + right(권리)</div>
+                <div class="info-box cog-box"><span class="label cog-label">동계어</span>equality, equator</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="word-header">
+                <span class="word-num">15</span>
+                <span class="word">consist with</span>
+                <div class="meaning">~와 일치하다 [cite: 207, 208]</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleDetails(this)">어원/동계어 보기 ▼</button>
+            <div class="details-section">
+                <div class="info-box ety-box"><span class="label ety-label">어원</span>con-(함께) + sistere(서다) + with → 나란히 조화롭게 서다</div>
+                <div class="info-box cog-box"><span class="label cog-label">동계어</span>consistent, insist, resist</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="word-header">
+                <span class="word-num">16</span>
+                <span class="word">tax free</span>
+                <div class="meaning">면세의, 비과세의 [cite: 209, 210]</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleDetails(this)">어원/동계어 보기 ▼</button>
+            <div class="details-section">
+                <div class="info-box ety-box"><span class="label ety-label">어원</span>taxare(평가하다, 세금을 매기다) + free(면제된)</div>
+                <div class="info-box cog-box"><span class="label cog-label">동계어</span>taxation, freedom</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="word-header">
+                <span class="word-num">17</span>
+                <span class="word">equality</span>
+                <div class="meaning">평등 [cite: 211, 212]</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleDetails(this)">어원/동계어 보기 ▼</button>
+            <div class="details-section">
+                <div class="info-box ety-box"><span class="label ety-label">어원</span>aequalis(같은, 평평한) + -ity(명사형)</div>
+                <div class="info-box cog-box"><span class="label cog-label">동계어</span>equal, equalize, equation</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="word-header">
+                <span class="word-num">18</span>
+                <span class="word">racial discrimination</span>
+                <div class="meaning">인종 차별 [cite: 213, 214]</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleDetails(this)">어원/동계어 보기 ▼</button>
+            <div class="details-section">
+                <div class="info-box ety-box"><span class="label ety-label">어원</span>race(인종) + dis-(분리하여) + crimen(판단하다) → 선을 그어 다르게 대함</div>
+                <div class="info-box cog-box"><span class="label cog-label">동계어</span>discriminate, crime</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="word-header">
+                <span class="word-num">19</span>
+                <span class="word">outer</span>
+                <div class="meaning">외부의 [cite: 215, 216]</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleDetails(this)">어원/동계어 보기 ▼</button>
+            <div class="details-section">
+                <div class="info-box ety-box"><span class="label ety-label">어원</span>out(밖)의 비교급 형태</div>
+                <div class="info-box cog-box"><span class="label cog-label">동계어</span>out, outward</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="word-header">
+                <span class="word-num">20</span>
+                <span class="word">wish, yearn, crave</span>
+                <div class="meaning">~을 갈망하다[그리워하다] [cite: 217, 218]</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleDetails(this)">어원/동계어 보기 ▼</button>
+            <div class="details-section">
+                <div class="info-box ety-box"><span class="label ety-label">어원</span>yearn (고대 영어 giernan: 원하다), crave (고대 영어 crafian: 요구하다)</div>
+                <div class="info-box cog-box"><span class="label cog-label">동계어</span>craving, yearning</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="word-header">
+                <span class="word-num">21</span>
+                <span class="word">immigrate</span>
+                <div class="meaning">이주해 들어오다 [cite: 219, 220]</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleDetails(this)">어원/동계어 보기 ▼</button>
+            <div class="details-section">
+                <div class="info-box ety-box"><span class="label ety-label">어원</span>in-(안으로) + migrare(이동하다)</div>
+                <div class="info-box cog-box"><span class="label cog-label">동계어</span>immigration, emigrate</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="word-header">
+                <span class="word-num">22</span>
+                <span class="word">live</span>
+                <div class="meaning">거주하다 [cite: 221, 222]</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleDetails(this)">어원/동계어 보기 ▼</button>
+            <div class="details-section">
+                <div class="info-box ety-box"><span class="label ety-label">어원</span>고대 영어 libban (살다, 생명을 유지하다)</div>
+                <div class="info-box cog-box"><span class="label cog-label">동계어</span>life, alive, lively</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="word-header">
+                <span class="word-num">23</span>
+                <span class="word">emigration</span>
+                <div class="meaning">(타국으로의) 이주 [이민] [cite: 223, 224]</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleDetails(this)">어원/동계어 보기 ▼</button>
+            <div class="details-section">
+                <div class="info-box ety-box"><span class="label ety-label">어원</span>ex-(밖으로) + migrare(이동하다) + -tion</div>
+                <div class="info-box cog-box"><span class="label cog-label">동계어</span>emigrate, immigrant</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="word-header">
+                <span class="word-num">24</span>
+                <span class="word">international</span>
+                <div class="meaning">국제적인 [cite: 225, 226]</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleDetails(this)">어원/동계어 보기 ▼</button>
+            <div class="details-section">
+                <div class="info-box ety-box"><span class="label ety-label">어원</span>inter-(서로 간의, 사이에) + natio(국가) + -al</div>
+                <div class="info-box cog-box"><span class="label cog-label">동계어</span>nation, national, internet</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="word-header">
+                <span class="word-num">25</span>
+                <span class="word">global</span>
+                <div class="meaning">전 세계의 [cite: 230, 231]</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleDetails(this)">어원/동계어 보기 ▼</button>
+            <div class="details-section">
+                <div class="info-box ety-box"><span class="label ety-label">어원</span>globus(둥근 구, 지구) + -al → 지구 전체에 걸친</div>
+                <div class="info-box cog-box"><span class="label cog-label">동계어</span>globe, globalization</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="word-header">
+                <span class="word-num">26</span>
+                <span class="word">cooperate with A for B</span>
+                <div class="meaning">B를 위해 A와 협동하다 [cite: 231]</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleDetails(this)">어원/동계어 보기 ▼</button>
+            <div class="details-section">
+                <div class="info-box ety-box"><span class="label ety-label">어원</span>co-(함께) + operari(일하다)</div>
+                <div class="info-box cog-box"><span class="label cog-label">동계어</span>operation, operate</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="word-header">
+                <span class="word-num">27</span>
+                <span class="word">consist in</span>
+                <div class="meaning">~에 있다 [cite: 231]</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleDetails(this)">어원/동계어 보기 ▼</button>
+            <div class="details-section">
+                <div class="info-box ety-box"><span class="label ety-label">어원</span>con-(함께) + sistere(서다) → 본질적인 요소가 내부에 존재하다</div>
+                <div class="info-box cog-box"><span class="label cog-label">동계어</span>consist, consistent</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="word-header">
+                <span class="word-num">28</span>
+                <span class="word">race</span>
+                <div class="meaning">인종 [cite: 231]</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleDetails(this)">어원/동계어 보기 ▼</button>
+            <div class="details-section">
+                <div class="info-box ety-box"><span class="label ety-label">어원</span>이탈리아어 razza(종족, 혈통)에서 유래</div>
+                <div class="info-box cog-box"><span class="label cog-label">동계어</span>racial, racism</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="word-header">
+                <span class="word-num">29</span>
+                <span class="word">event</span>
+                <div class="meaning">특별한 일 [cite: 231]</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleDetails(this)">어원/동계어 보기 ▼</button>
+            <div class="details-section">
+                <div class="info-box ety-box"><span class="label ety-label">어원</span>ex-(밖으로) + venire(오다) → 밖으로 결과가 도출되어 일어난 일</div>
+                <div class="info-box cog-box"><span class="label cog-label">동계어</span>eventual, prevent, invent</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="word-header">
+                <span class="word-num">30</span>
+                <span class="word">regional</span>
+                <div class="meaning">지역의 [cite: 231]</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleDetails(this)">어원/동계어 보기 ▼</button>
+            <div class="details-section">
+                <div class="info-box ety-box"><span class="label ety-label">어원</span>regere(이끌다, 통치하다) → 통치력이 미치는 구역의</div>
+                <div class="info-box cog-box"><span class="label cog-label">동계어</span>region, direct, correct</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="word-header">
+                <span class="word-num">31</span>
+                <span class="word">domestic animal</span>
+                <div class="meaning">가축 [cite: 231]</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleDetails(this)">어원/동계어 보기 ▼</button>
+            <div class="details-section">
+                <div class="info-box ety-box"><span class="label ety-label">어원</span>domus(집) → 야생이 아닌 집 안에서 길러지는 동물</div>
+                <div class="info-box cog-box"><span class="label cog-label">동계어</span>domestic, dominate</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="word-header">
+                <span class="word-num">32</span>
+                <span class="word">mean</span>
+                <div class="meaning">~할 작정이다. 의도하다 [cite: 231]</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleDetails(this)">어원/동계어 보기 ▼</button>
+            <div class="details-section">
+                <div class="info-box ety-box"><span class="label ety-label">어원</span>고대 영어 mænan (의도하다, 뜻을 전하다)</div>
+                <div class="info-box cog-box"><span class="label cog-label">동계어</span>meaning, meaningful</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="word-header">
+                <span class="word-num">33</span>
+                <span class="word">port</span>
+                <div class="meaning">항구, 항만 [cite: 231]</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleDetails(this)">어원/동계어 보기 ▼</button>
+            <div class="details-section">
+                <div class="info-box ety-box"><span class="label ety-label">어원</span>portus(항구, 피난처, 출입구)</div>
+                <div class="info-box cog-box"><span class="label cog-label">동계어</span>portal, passport, import</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="word-header">
+                <span class="word-num">34</span>
+                <span class="word">independent</span>
+                <div class="meaning">독립된 [cite: 231]</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleDetails(this)">어원/동계어 보기 ▼</button>
+            <div class="details-section">
+                <div class="info-box ety-box"><span class="label ety-label">어원</span>in-(not) + de-(아래로) + pendere(매달리다) → 타인에게 의존해 매달리지 않는</div>
+                <div class="info-box cog-box"><span class="label cog-label">동계어</span>depend, pendant, suspend</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="word-header">
+                <span class="word-num">35</span>
+                <span class="word">internal</span>
+                <div class="meaning">내부의 [cite: 231]</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleDetails(this)">어원/동계어 보기 ▼</button>
+            <div class="details-section">
+                <div class="info-box ety-box"><span class="label ety-label">어원</span>internus(안쪽의)</div>
+                <div class="info-box cog-box"><span class="label cog-label">동계어</span>interior, internet</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="word-header">
+                <span class="word-num">36</span>
+                <span class="word">duty</span>
+                <div class="meaning">세금 [cite: 231]</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleDetails(this)">어원/동계어 보기 ▼</button>
+            <div class="details-section">
+                <div class="info-box ety-box"><span class="label ety-label">어원</span>고대 프랑스어 deu(빚진 것, 마땅히 해야 할 것) → 관세나 세금의 의미 파생</div>
+                <div class="info-box cog-box"><span class="label cog-label">동계어</span>due, endue</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="word-header">
+                <span class="word-num">37</span>
+                <span class="word">dominance</span>
+                <div class="meaning">지배 [cite: 231, 232]</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleDetails(this)">어원/동계어 보기 ▼</button>
+            <div class="details-section">
+                <div class="info-box ety-box"><span class="label ety-label">어원</span>dominus(주인) + -ance(명사형)</div>
+                <div class="info-box cog-box"><span class="label cog-label">동계어</span>dominant, dominate</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="word-header">
+                <span class="word-num">38</span>
+                <span class="word">reservation</span>
+                <div class="meaning">보류; 예약 [cite: 231]</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleDetails(this)">어원/동계어 보기 ▼</button>
+            <div class="details-section">
+                <div class="info-box ety-box"><span class="label ety-label">어원</span>re-(다시, 뒤로) + servare(지키다, 유지하다) → 미리 빼놓아 지켜두는 것</div>
+                <div class="info-box cog-box"><span class="label cog-label">동계어</span>reserve, preserve, conserve</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="word-header">
+                <span class="word-num">39</span>
+                <span class="word">zone</span>
+                <div class="meaning">영역, 영토 [cite: 231]</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleDetails(this)">어원/동계어 보기 ▼</button>
+            <div class="details-section">
+                <div class="info-box ety-box"><span class="label ety-label">어원</span>그리스어 zōnē (허리띠, 띠 모양으로 둘러싼 구역)</div>
+                <div class="info-box cog-box"><span class="label cog-label">동계어</span>zonal, ozone</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="word-header">
+                <span class="word-num">40</span>
+                <span class="word">invasion</span>
+                <div class="meaning">침입, 침략 [cite: 231]</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleDetails(this)">어원/동계어 보기 ▼</button>
+            <div class="details-section">
+                <div class="info-box ety-box"><span class="label ety-label">어원</span>in-(안으로) + vadere(가다) → 남의 영토 안으로 밀고 들어감</div>
+                <div class="info-box cog-box"><span class="label cog-label">동계어</span>invade, evade, pervade</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="word-header">
+                <span class="word-num">41</span>
+                <span class="word">intention</span>
+                <div class="meaning">의도 [cite: 231]</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleDetails(this)">어원/동계어 보기 ▼</button>
+            <div class="details-section">
+                <div class="info-box ety-box"><span class="label ety-label">어원</span>in-(~을 향해) + tendere(뻗다) → 마음이나 목적이 뻗어가는 방향</div>
+                <div class="info-box cog-box"><span class="label cog-label">동계어</span>intend, attention, extend</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="word-header">
+                <span class="word-num">42</span>
+                <span class="word">characteristic</span>
+                <div class="meaning">특성, 특색 [cite: 231]</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleDetails(this)">어원/동계어 보기 ▼</button>
+            <div class="details-section">
+                <div class="info-box ety-box"><span class="label ety-label">어원</span>그리스어 kharakter (도장으로 찍힌 자국) → 변하지 않는 고유의 성질</div>
+                <div class="info-box cog-box"><span class="label cog-label">동계어</span>character, characterize</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="word-header">
+                <span class="word-num">43</span>
+                <span class="word">inner strength</span>
+                <div class="meaning">내면의 힘 [cite: 231]</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleDetails(this)">어원/동계어 보기 ▼</button>
+            <div class="details-section">
+                <div class="info-box ety-box"><span class="label ety-label">어원</span>inner(안쪽의) + strength(힘, strong의 명사형)</div>
+                <div class="info-box cog-box"><span class="label cog-label">동계어</span>strong, strictly</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="word-header">
+                <span class="word-num">44</span>
+                <span class="word">domestic</span>
+                <div class="meaning">국내의 [cite: 231]</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleDetails(this)">어원/동계어 보기 ▼</button>
+            <div class="details-section">
+                <div class="info-box ety-box"><span class="label ety-label">어원</span>domus(집) → 국가를 집으로 보아 '자국 안의'라는 뜻이 됨</div>
+                <div class="info-box cog-box"><span class="label cog-label">동계어</span>domain, dominate</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="word-header">
+                <span class="word-num">45</span>
+                <span class="word">civic</span>
+                <div class="meaning">시민의 [cite: 231]</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleDetails(this)">어원/동계어 보기 ▼</button>
+            <div class="details-section">
+                <div class="info-box ety-box"><span class="label ety-label">어원</span>civis(시민, 도시 거주민)</div>
+                <div class="info-box cog-box"><span class="label cog-label">동계어</span>city, civil, civilization</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="word-header">
+                <span class="word-num">46</span>
+                <span class="word">resistance</span>
+                <div class="meaning">저항 [cite: 231]</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleDetails(this)">어원/동계어 보기 ▼</button>
+            <div class="details-section">
+                <div class="info-box ety-box"><span class="label ety-label">어원</span>re-(뒤로, 반대로) + sistere(서다) → 맞서서 버티다</div>
+                <div class="info-box cog-box"><span class="label cog-label">동계어</span>resist, assist, consist</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="word-header">
+                <span class="word-num">47</span>
+                <span class="word">racial</span>
+                <div class="meaning">민족의, 인종의 [cite: 231]</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleDetails(this)">어원/동계어 보기 ▼</button>
+            <div class="details-section">
+                <div class="info-box ety-box"><span class="label ety-label">어원</span>race(인종, 민족) + -ial</div>
+                <div class="info-box cog-box"><span class="label cog-label">동계어</span>race, racism</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="word-header">
+                <span class="word-num">48</span>
+                <span class="word">resident</span>
+                <div class="meaning">지방민, 주민 [cite: 231]</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleDetails(this)">어원/동계어 보기 ▼</button>
+            <div class="details-section">
+                <div class="info-box ety-box"><span class="label ety-label">어원</span>re-(뒤에, 정착하여) + sedere(앉다)</div>
+                <div class="info-box cog-box"><span class="label cog-label">동계어</span>reside, residence, settle</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="word-header">
+                <span class="word-num">49</span>
+                <span class="word">oppose</span>
+                <div class="meaning">저항하다 [cite: 237, 238]</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleDetails(this)">어원/동계어 보기 ▼</button>
+            <div class="details-section">
+                <div class="info-box ety-box"><span class="label ety-label">어원</span>ob-(반대로) + ponere(놓다, 두다) → 마주 보고 서서 반대하다</div>
+                <div class="info-box cog-box"><span class="label cog-label">동계어</span>opposite, position, postpone</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="word-header">
+                <span class="word-num">50</span>
+                <span class="word">dependence</span>
+                <div class="meaning">의존 [cite: 239, 240]</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleDetails(this)">어원/동계어 보기 ▼</button>
+            <div class="details-section">
+                <div class="info-box ety-box"><span class="label ety-label">어원</span>de-(아래로) + pendere(매달리다) → 타인에게 매달려 있는 상태</div>
+                <div class="info-box cog-box"><span class="label cog-label">동계어</span>depend, independent, suspend</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="word-header">
+                <span class="word-num">51</span>
+                <span class="word">civil</span>
+                <div class="meaning">국내의 [cite: 241, 242]</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleDetails(this)">어원/동계어 보기 ▼</button>
+            <div class="details-section">
+                <div class="info-box ety-box"><span class="label ety-label">어원</span>civis(시민) → 시민 사회의, 국가(국내)의</div>
+                <div class="info-box cog-box"><span class="label cog-label">동계어</span>civic, city, civilization</div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        // 어원/동계어 토글(숨김/표시) 기능
+        function toggleDetails(btn) {
+            // 가장 가까운 .card를 찾고 그 안의 .details-section을 선택하여 DOM 구조 변경에 강건하게 대응
+            const details = btn.closest('.card').querySelector('.details-section');
+            
+            if (details.classList.contains('show')) {
+                details.classList.remove('show');
+                btn.innerHTML = '어원/동계어 보기 ▼';
+            } else {
+                details.classList.add('show');
+                btn.innerHTML = '숨기기 ▲';
+            }
+        }
+    </script>
+</body>
+</html>
