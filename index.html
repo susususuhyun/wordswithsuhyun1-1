@@ -56,51 +56,22 @@
             border: 1px solid var(--border-color);
         }
         
-        /* 헤더 스타일 명시적 정의 */
         .word-header { 
             display: flex;
             flex-direction: column;
-            margin-bottom: 8px;
+            margin-bottom: 12px; /* 간격 조정 */
         }
         
         .word-num { font-size: 0.9rem; color: #9ca3af; font-weight: bold; }
         .word { font-size: 1.6rem; font-weight: 800; color: #111827; margin-top: 4px; display: block; }
         .meaning { font-size: 1.1rem; font-weight: 600; color: #dc2626; margin-top: 8px; line-height: 1.4; }
         
-        /* 토글 버튼 */
-        .toggle-btn {
-            display: block;
-            width: 100%;
-            background-color: #f8fafc;
-            border: 1px solid #e2e8f0;
-            color: #475569;
-            padding: 8px;
-            border-radius: 6px;
-            font-size: 0.85rem;
-            font-weight: bold;
-            margin-top: 14px;
-            cursor: pointer;
-            transition: background-color 0.2s;
-        }
-        .toggle-btn:active {
-            background-color: #e2e8f0;
-        }
-
-        /* 어원/동계어 숨김 영역 */
+        /* 어원/동계어 노출 영역 */
         .details-section {
-            display: none; 
+            display: block; /* 항상 노출 */
             margin-top: 12px;
             border-top: 1px dashed var(--border-color);
-            padding-top: 12px;
-            animation: fadeIn 0.2s ease;
-        }
-        .details-section.show {
-            display: block;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-5px); }
-            to { opacity: 1; transform: translateY(0); }
+            padding-top: 14px;
         }
 
         .info-box { 
@@ -110,8 +81,10 @@
             font-size: 0.95rem; 
             line-height: 1.4;
         }
+        .info-box:last-child { margin-bottom: 0; }
+        
         .ety-box { background-color: var(--ety-bg); color: #1e3a8a; }
-        .cog-box { background-color: var(--cog-bg); color: #831843; margin-bottom: 0; }
+        .cog-box { background-color: var(--cog-bg); color: #831843; }
         .label { 
             display: inline-block; 
             font-size: 0.75rem; 
@@ -139,7 +112,6 @@
                 <span class="word">devote oneself to</span>
                 <div class="meaning">~에 몰두하다</div>
             </div>
-            <button class="toggle-btn" onclick="toggleDetails(this)">어원/동계어 보기 ▼</button>
             <div class="details-section">
                 <div class="info-box ety-box"><span class="label ety-label">어원</span>de(완전히) + vovere(맹세하다) → 신에게 자신을 완전히 바치기로 맹세하다</div>
                 <div class="info-box cog-box"><span class="label cog-label">동계어</span>devotion, vote, vow</div>
@@ -152,7 +124,6 @@
                 <span class="word">rid A of B</span>
                 <div class="meaning">A에서 B를 없애다</div>
             </div>
-            <button class="toggle-btn" onclick="toggleDetails(this)">어원/동계어 보기 ▼</button>
             <div class="details-section">
                 <div class="info-box ety-box"><span class="label ety-label">어원</span>고대 노르드어 rydja(땅을 개간하다, 치우다)에서 유래</div>
                 <div class="info-box cog-box"><span class="label cog-label">동계어</span>get rid of</div>
@@ -165,7 +136,6 @@
                 <span class="word">mean</span>
                 <div class="meaning">의미하다, 나타내다</div>
             </div>
-            <button class="toggle-btn" onclick="toggleDetails(this)">어원/동계어 보기 ▼</button>
             <div class="details-section">
                 <div class="info-box ety-box"><span class="label ety-label">어원</span>고대 영어 mænan (의도하다, 마음속에 품다)</div>
                 <div class="info-box cog-box"><span class="label cog-label">동계어</span>meaning, meaningful</div>
@@ -178,7 +148,6 @@
                 <span class="word">culture</span>
                 <div class="meaning">문명, 문화</div>
             </div>
-            <button class="toggle-btn" onclick="toggleDetails(this)">어원/동계어 보기 ▼</button>
             <div class="details-section">
                 <div class="info-box ety-box"><span class="label ety-label">어원</span>colere(경작하다, 가꾸다) → 자연 상태의 땅이나 인간을 가꾸어 발전시킨 상태</div>
                 <div class="info-box cog-box"><span class="label cog-label">동계어</span>cultivate, agriculture, colony</div>
@@ -191,7 +160,6 @@
                 <span class="word">replace A with B</span>
                 <div class="meaning">A를 B로 바꾸다</div>
             </div>
-            <button class="toggle-btn" onclick="toggleDetails(this)">어원/동계어 보기 ▼</button>
             <div class="details-section">
                 <div class="info-box ety-box"><span class="label ety-label">어원</span>re(다시) + place(장소, 두다) → 있던 것을 치우고 다시 다른 것을 그 자리에 두다</div>
                 <div class="info-box cog-box"><span class="label cog-label">동계어</span>replacement, place</div>
@@ -204,7 +172,6 @@
                 <span class="word">religious</span>
                 <div class="meaning">신성한, 성스러운, 종교적인</div>
             </div>
-            <button class="toggle-btn" onclick="toggleDetails(this)">어원/동계어 보기 ▼</button>
             <div class="details-section">
                 <div class="info-box ety-box"><span class="label ety-label">어원</span>re(다시) + ligare(묶다) → 신과 인간을 다시 단단히 묶어 연결하는</div>
                 <div class="info-box cog-box"><span class="label cog-label">동계어</span>religion, rely, ligament</div>
@@ -217,7 +184,6 @@
                 <span class="word">out of sequence</span>
                 <div class="meaning">순서가 엉망인</div>
             </div>
-            <button class="toggle-btn" onclick="toggleDetails(this)">어원/동계어 보기 ▼</button>
             <div class="details-section">
                 <div class="info-box ety-box"><span class="label ety-label">어원</span>sequi(따르다) → 뒤따라오는 순서(sequence)에서 벗어난(out of)</div>
                 <div class="info-box cog-box"><span class="label cog-label">동계어</span>sequential, consequence</div>
@@ -230,7 +196,6 @@
                 <span class="word">earlier</span>
                 <div class="meaning">이전의, 앞의</div>
             </div>
-            <button class="toggle-btn" onclick="toggleDetails(this)">어원/동계어 보기 ▼</button>
             <div class="details-section">
                 <div class="info-box ety-box"><span class="label ety-label">어원</span>early의 비교급 (시간상 더 이른)</div>
                 <div class="info-box cog-box"><span class="label cog-label">동계어</span>early, earliest</div>
@@ -243,7 +208,6 @@
                 <span class="word">conservation</span>
                 <div class="meaning">보존, 보호</div>
             </div>
-            <button class="toggle-btn" onclick="toggleDetails(this)">어원/동계어 보기 ▼</button>
             <div class="details-section">
                 <div class="info-box ety-box"><span class="label ety-label">어원</span>con(함께, 완전히) + servare(지키다) → 함께 힘을 모아 온전히 지켜냄</div>
                 <div class="info-box cog-box"><span class="label cog-label">동계어</span>conserve, conservative, preserve</div>
@@ -256,7 +220,6 @@
                 <span class="word">civilize</span>
                 <div class="meaning">문명화하다</div>
             </div>
-            <button class="toggle-btn" onclick="toggleDetails(this)">어원/동계어 보기 ▼</button>
             <div class="details-section">
                 <div class="info-box ety-box"><span class="label ety-label">어원</span>civis(시민) + -ize(~하게 만들다) → 예의 바른 시민의 상태로 만들다</div>
                 <div class="info-box cog-box"><span class="label cog-label">동계어</span>civil, civilization, city</div>
@@ -269,7 +232,6 @@
                 <span class="word">faithful</span>
                 <div class="meaning">충실한</div>
             </div>
-            <button class="toggle-btn" onclick="toggleDetails(this)">어원/동계어 보기 ▼</button>
             <div class="details-section">
                 <div class="info-box ety-box"><span class="label ety-label">어원</span>fides(믿음, 신뢰) + -ful(가득 찬) → 믿음이 꽉 찬</div>
                 <div class="info-box cog-box"><span class="label cog-label">동계어</span>faith, fidelity</div>
@@ -282,7 +244,6 @@
                 <span class="word">vanish</span>
                 <div class="meaning">사라지다</div>
             </div>
-            <button class="toggle-btn" onclick="toggleDetails(this)">어원/동계어 보기 ▼</button>
             <div class="details-section">
                 <div class="info-box ety-box"><span class="label ety-label">어원</span>vanus(텅 빈, 실체가 없는) → 텅 비어 없어지다</div>
                 <div class="info-box cog-box"><span class="label cog-label">동계어</span>vain, vanity</div>
@@ -295,7 +256,6 @@
                 <span class="word">devotion</span>
                 <div class="meaning">헌신, 전념</div>
             </div>
-            <button class="toggle-btn" onclick="toggleDetails(this)">어원/동계어 보기 ▼</button>
             <div class="details-section">
                 <div class="info-box ety-box"><span class="label ety-label">어원</span>de(완전히) + vovere(맹세하다) + -tion</div>
                 <div class="info-box cog-box"><span class="label cog-label">동계어</span>devote, devoted</div>
@@ -308,7 +268,6 @@
                 <span class="word">majority</span>
                 <div class="meaning">다수</div>
             </div>
-            <button class="toggle-btn" onclick="toggleDetails(this)">어원/동계어 보기 ▼</button>
             <div class="details-section">
                 <div class="info-box ety-box"><span class="label ety-label">어원</span>major(더 큰) + -ity → 무리 중에서 더 크게 차지하는 부분</div>
                 <div class="info-box cog-box"><span class="label cog-label">동계어</span>major, mayor</div>
@@ -321,7 +280,6 @@
                 <span class="word">biographer</span>
                 <div class="meaning">전기 작가</div>
             </div>
-            <button class="toggle-btn" onclick="toggleDetails(this)">어원/동계어 보기 ▼</button>
             <div class="details-section">
                 <div class="info-box ety-box"><span class="label ety-label">어원</span>bio(생명, 일생) + graph(쓰다) + -er(사람) → 한 사람의 일생을 기록하는 사람</div>
                 <div class="info-box cog-box"><span class="label cog-label">동계어</span>biology, paragraph, autobiography</div>
@@ -334,7 +292,6 @@
                 <span class="word">evaluation</span>
                 <div class="meaning">평가</div>
             </div>
-            <button class="toggle-btn" onclick="toggleDetails(this)">어원/동계어 보기 ▼</button>
             <div class="details-section">
                 <div class="info-box ety-box"><span class="label ety-label">어원</span>ex(밖으로) + valere(가치 있다, 강하다) → 내재된 가치를 밖으로 드러내어 매기다</div>
                 <div class="info-box cog-box"><span class="label cog-label">동계어</span>evaluate, value, valid</div>
@@ -347,7 +304,6 @@
                 <span class="word">get rid of</span>
                 <div class="meaning">~을 제거하다, 해소하다</div>
             </div>
-            <button class="toggle-btn" onclick="toggleDetails(this)">어원/동계어 보기 ▼</button>
             <div class="details-section">
                 <div class="info-box ety-box"><span class="label ety-label">어원</span>구동사 (rid: 개간하다, 치우다)</div>
                 <div class="info-box cog-box"><span class="label cog-label">동계어</span>rid</div>
@@ -360,7 +316,6 @@
                 <span class="word">mission</span>
                 <div class="meaning">임무, 선교</div>
             </div>
-            <button class="toggle-btn" onclick="toggleDetails(this)">어원/동계어 보기 ▼</button>
             <div class="details-section">
                 <div class="info-box ety-box"><span class="label ety-label">어원</span>mittere(보내다) → 어떤 목적을 위해 파견되어 보내진 일</div>
                 <div class="info-box cog-box"><span class="label cog-label">동계어</span>missile, transmit, admit</div>
@@ -373,7 +328,6 @@
                 <span class="word">sequential</span>
                 <div class="meaning">순차적인</div>
             </div>
-            <button class="toggle-btn" onclick="toggleDetails(this)">어원/동계어 보기 ▼</button>
             <div class="details-section">
                 <div class="info-box ety-box"><span class="label ety-label">어원</span>sequi(따르다) + -ent + -ial → 순서대로 차례차례 뒤따르는</div>
                 <div class="info-box cog-box"><span class="label cog-label">동계어</span>sequence, sequel</div>
@@ -386,7 +340,6 @@
                 <span class="word">previous</span>
                 <div class="meaning">이전의, 우선하는</div>
             </div>
-            <button class="toggle-btn" onclick="toggleDetails(this)">어원/동계어 보기 ▼</button>
             <div class="details-section">
                 <div class="info-box ety-box"><span class="label ety-label">어원</span>prae(미리, 앞서) + via(길) → 가야 할 길에 앞서 있는</div>
                 <div class="info-box cog-box"><span class="label cog-label">동계어</span>previously, obvious, via</div>
@@ -399,7 +352,6 @@
                 <span class="word">replacement</span>
                 <div class="meaning">대체, 교환</div>
             </div>
-            <button class="toggle-btn" onclick="toggleDetails(this)">어원/동계어 보기 ▼</button>
             <div class="details-section">
                 <div class="info-box ety-box"><span class="label ety-label">어원</span>replace(다시 배치하다) + -ment(명사형)</div>
                 <div class="info-box cog-box"><span class="label cog-label">동계어</span>replace, place</div>
@@ -412,7 +364,6 @@
                 <span class="word">ascend</span>
                 <div class="meaning">올라가다</div>
             </div>
-            <button class="toggle-btn" onclick="toggleDetails(this)">어원/동계어 보기 ▼</button>
             <div class="details-section">
                 <div class="info-box ety-box"><span class="label ety-label">어원</span>ad(~쪽으로) + scandere(오르다) → 위를 향해 오르다</div>
                 <div class="info-box cog-box"><span class="label cog-label">동계어</span>ascent, descend, transcend</div>
@@ -425,7 +376,6 @@
                 <span class="word">significance</span>
                 <div class="meaning">중요성, 의미</div>
             </div>
-            <button class="toggle-btn" onclick="toggleDetails(this)">어원/동계어 보기 ▼</button>
             <div class="details-section">
                 <div class="info-box ety-box"><span class="label ety-label">어원</span>signum(표시) + facere(만들다) → 표시를 남길 만큼 중요한 의미가 있음</div>
                 <div class="info-box cog-box"><span class="label cog-label">동계어</span>significant, signify, sign</div>
@@ -438,7 +388,6 @@
                 <span class="word">sacredness</span>
                 <div class="meaning">신성함</div>
             </div>
-            <button class="toggle-btn" onclick="toggleDetails(this)">어원/동계어 보기 ▼</button>
             <div class="details-section">
                 <div class="info-box ety-box"><span class="label ety-label">어원</span>sacer(신에게 바쳐진, 신성한) + -ness</div>
                 <div class="info-box cog-box"><span class="label cog-label">동계어</span>sacred, sacrifice</div>
@@ -451,7 +400,6 @@
                 <span class="word">preserve</span>
                 <div class="meaning">보존하다</div>
             </div>
-            <button class="toggle-btn" onclick="toggleDetails(this)">어원/동계어 보기 ▼</button>
             <div class="details-section">
                 <div class="info-box ety-box"><span class="label ety-label">어원</span>prae(미리) + servare(지키다) → 손상되기 전에 미리 지키다</div>
                 <div class="info-box cog-box"><span class="label cog-label">동계어</span>preservation, reserve, conserve</div>
@@ -464,7 +412,6 @@
                 <span class="word">settlement</span>
                 <div class="meaning">정착; 합의, 해결</div>
             </div>
-            <button class="toggle-btn" onclick="toggleDetails(this)">어원/동계어 보기 ▼</button>
             <div class="details-section">
                 <div class="info-box ety-box"><span class="label ety-label">어원</span>settle(앉히다, 안정시키다) + -ment → 갈등이나 흔들림이 가라앉아 확정된 상태</div>
                 <div class="info-box cog-box"><span class="label cog-label">동계어</span>settle, settler, seat</div>
@@ -477,7 +424,6 @@
                 <span class="word">descend from</span>
                 <div class="meaning">~의 자손이다</div>
             </div>
-            <button class="toggle-btn" onclick="toggleDetails(this)">어원/동계어 보기 ▼</button>
             <div class="details-section">
                 <div class="info-box ety-box"><span class="label ety-label">어원</span>de(아래로) + scandere(오르다/가다) → 가계도를 따라 아래로 이어지다</div>
                 <div class="info-box cog-box"><span class="label cog-label">동계어</span>descendant, ascend</div>
@@ -490,7 +436,6 @@
                 <span class="word">devoted</span>
                 <div class="meaning">헌신적인</div>
             </div>
-            <button class="toggle-btn" onclick="toggleDetails(this)">어원/동계어 보기 ▼</button>
             <div class="details-section">
                 <div class="info-box ety-box"><span class="label ety-label">어원</span>devote(바치다)의 과거분사형</div>
                 <div class="info-box cog-box"><span class="label cog-label">동계어</span>devote, devotion</div>
@@ -503,7 +448,6 @@
                 <span class="word">substitute</span>
                 <div class="meaning">대신하다, 대체하다</div>
             </div>
-            <button class="toggle-btn" onclick="toggleDetails(this)">어원/동계어 보기 ▼</button>
             <div class="details-section">
                 <div class="info-box ety-box"><span class="label ety-label">어원</span>sub(대신하여, 아래에) + statuere(세우다) → 원래 것 대신 가져다 세우다</div>
                 <div class="info-box cog-box"><span class="label cog-label">동계어</span>substitution, statue, institute</div>
@@ -516,7 +460,6 @@
                 <span class="word">revolutionary</span>
                 <div class="meaning">혁명의</div>
             </div>
-            <button class="toggle-btn" onclick="toggleDetails(this)">어원/동계어 보기 ▼</button>
             <div class="details-section">
                 <div class="info-box ety-box"><span class="label ety-label">어원</span>re(다시) + volvere(돌다) + -ary → 완전히 뒤집어엎어 돌아가는</div>
                 <div class="info-box cog-box"><span class="label cog-label">동계어</span>revolution, revolve, involve</div>
@@ -529,7 +472,6 @@
                 <span class="word">gradually</span>
                 <div class="meaning">점차로</div>
             </div>
-            <button class="toggle-btn" onclick="toggleDetails(this)">어원/동계어 보기 ▼</button>
             <div class="details-section">
                 <div class="info-box ety-box"><span class="label ety-label">어원</span>gradus(걸음, 단계) → 한 걸음 한 걸음 단계적으로</div>
                 <div class="info-box cog-box"><span class="label cog-label">동계어</span>gradual, grade, upgrade</div>
@@ -542,7 +484,6 @@
                 <span class="word">sudden</span>
                 <div class="meaning">갑작스러운</div>
             </div>
-            <button class="toggle-btn" onclick="toggleDetails(this)">어원/동계어 보기 ▼</button>
             <div class="details-section">
                 <div class="info-box ety-box"><span class="label ety-label">어원</span>sub(아래에서) + ire(가다) → 예상치 못하게 아래에서 쑥 다가옴</div>
                 <div class="info-box cog-box"><span class="label cog-label">동계어</span>suddenly</div>
@@ -555,7 +496,6 @@
                 <span class="word">conservative</span>
                 <div class="meaning">보수적인</div>
             </div>
-            <button class="toggle-btn" onclick="toggleDetails(this)">어원/동계어 보기 ▼</button>
             <div class="details-section">
                 <div class="info-box ety-box"><span class="label ety-label">어원</span>con(함께, 완전히) + servare(지키다) → 기존의 가치나 체제를 온전히 지키려는</div>
                 <div class="info-box cog-box"><span class="label cog-label">동계어</span>conserve, conservation</div>
@@ -568,7 +508,6 @@
                 <span class="word">belief</span>
                 <div class="meaning">신념, 믿음</div>
             </div>
-            <button class="toggle-btn" onclick="toggleDetails(this)">어원/동계어 보기 ▼</button>
             <div class="details-section">
                 <div class="info-box ety-box"><span class="label ety-label">어원</span>be(강조) + lief(소중한, 믿는) → 소중히 여기고 확고하게 믿는 것</div>
                 <div class="info-box cog-box"><span class="label cog-label">동계어</span>believe, believable</div>
@@ -581,7 +520,6 @@
                 <span class="word">assess</span>
                 <div class="meaning">평가하다</div>
             </div>
-            <button class="toggle-btn" onclick="toggleDetails(this)">어원/동계어 보기 ▼</button>
             <div class="details-section">
                 <div class="info-box ety-box"><span class="label ety-label">어원</span>ad(~곁에) + sedere(앉다) → 재판관이나 세금 징수원 곁에 앉아 가치를 매기다</div>
                 <div class="info-box cog-box"><span class="label cog-label">동계어</span>assessment, session, reside</div>
@@ -594,7 +532,6 @@
                 <span class="word">disappearance</span>
                 <div class="meaning">소멸, 실종</div>
             </div>
-            <button class="toggle-btn" onclick="toggleDetails(this)">어원/동계어 보기 ▼</button>
             <div class="details-section">
                 <div class="info-box ety-box"><span class="label ety-label">어원</span>dis(반대) + appearance(나타남) → 눈앞에 나타나 있던 것이 없어짐</div>
                 <div class="info-box cog-box"><span class="label cog-label">동계어</span>disappear, appear, apparent</div>
@@ -607,7 +544,6 @@
                 <span class="word">pass down</span>
                 <div class="meaning">~을 전하다, 후세에 물려주다</div>
             </div>
-            <button class="toggle-btn" onclick="toggleDetails(this)">어원/동계어 보기 ▼</button>
             <div class="details-section">
                 <div class="info-box ety-box"><span class="label ety-label">어원</span>구동사 (pass 넘기다 + down 아래 세대로)</div>
                 <div class="info-box cog-box"><span class="label cog-label">동계어</span>pass</div>
@@ -620,7 +556,6 @@
                 <span class="word">original</span>
                 <div class="meaning">원래의</div>
             </div>
-            <button class="toggle-btn" onclick="toggleDetails(this)">어원/동계어 보기 ▼</button>
             <div class="details-section">
                 <div class="info-box ety-box"><span class="label ety-label">어원</span>oriri(떠오르다, 시작되다) → 해가 떠오르는 첫 시작점의</div>
                 <div class="info-box cog-box"><span class="label cog-label">동계어</span>origin, originate, orient</div>
@@ -633,7 +568,6 @@
                 <span class="word">significant</span>
                 <div class="meaning">중요한, 의미 있는</div>
             </div>
-            <button class="toggle-btn" onclick="toggleDetails(this)">어원/동계어 보기 ▼</button>
             <div class="details-section">
                 <div class="info-box ety-box"><span class="label ety-label">어원</span>signum(표시) + facere(만들다) → 뚜렷하게 표시가 날 만큼 중요한</div>
                 <div class="info-box cog-box"><span class="label cog-label">동계어</span>significance, signify, sign</div>
@@ -646,7 +580,6 @@
                 <span class="word">priority</span>
                 <div class="meaning">우선하는 것</div>
             </div>
-            <button class="toggle-btn" onclick="toggleDetails(this)">어원/동계어 보기 ▼</button>
             <div class="details-section">
                 <div class="info-box ety-box"><span class="label ety-label">어원</span>prior(이전의, 먼저인) + -ity → 다른 것보다 시간이나 순서상 먼저 두는 것</div>
                 <div class="info-box cog-box"><span class="label cog-label">동계어</span>prior, prioritize</div>
@@ -659,7 +592,6 @@
                 <span class="word">descendant</span>
                 <div class="meaning">자손</div>
             </div>
-            <button class="toggle-btn" onclick="toggleDetails(this)">어원/동계어 보기 ▼</button>
             <div class="details-section">
                 <div class="info-box ety-box"><span class="label ety-label">어원</span>de(아래로) + scandere(오르다/가다) + -ant(사람) → 가계도상 아래로 이어진 사람</div>
                 <div class="info-box cog-box"><span class="label cog-label">동계어</span>descend, ascend</div>
@@ -672,7 +604,6 @@
                 <span class="word">originate</span>
                 <div class="meaning">유래하다</div>
             </div>
-            <button class="toggle-btn" onclick="toggleDetails(this)">어원/동계어 보기 ▼</button>
             <div class="details-section">
                 <div class="info-box ety-box"><span class="label ety-label">어원</span>oriri(떠오르다, 시작되다) + -ate(동사형)</div>
                 <div class="info-box cog-box"><span class="label cog-label">동계어</span>origin, original</div>
@@ -685,7 +616,6 @@
                 <span class="word">appear</span>
                 <div class="meaning">나타나다</div>
             </div>
-            <button class="toggle-btn" onclick="toggleDetails(this)">어원/동계어 보기 ▼</button>
             <div class="details-section">
                 <div class="info-box ety-box"><span class="label ety-label">어원</span>ad(~쪽으로) + parere(눈에 보이다) → 시야 안으로 들어오다</div>
                 <div class="info-box cog-box"><span class="label cog-label">동계어</span>appearance, apparent, transparent</div>
@@ -698,7 +628,6 @@
                 <span class="word">minor</span>
                 <div class="meaning">소수의</div>
             </div>
-            <button class="toggle-btn" onclick="toggleDetails(this)">어원/동계어 보기 ▼</button>
             <div class="details-section">
                 <div class="info-box ety-box"><span class="label ety-label">어원</span>minor(더 작은, 더 적은)</div>
                 <div class="info-box cog-box"><span class="label cog-label">동계어</span>minority, minus, minute</div>
@@ -711,7 +640,6 @@
                 <span class="word">later</span>
                 <div class="meaning">뒤의, 나중의</div>
             </div>
-            <button class="toggle-btn" onclick="toggleDetails(this)">어원/동계어 보기 ▼</button>
             <div class="details-section">
                 <div class="info-box ety-box"><span class="label ety-label">어원</span>late(늦은)의 비교급 형태</div>
                 <div class="info-box cog-box"><span class="label cog-label">동계어</span>late, lately</div>
@@ -724,6 +652,13 @@
                 <span class="word">royalty</span>
                 <div class="meaning">왕위, 왕권</div>
             </div>
-            <button class="toggle-btn" onclick="toggleDetails(this)">어원/동계어 보기 ▼</button>
             <div class="details-section">
-                <div
+                <div class="info-box ety-box"><span class="label ety-label">어원</span>rex/reg-(왕) → 왕족이 가지는 권리나 지위</div>
+                <div class="info-box cog-box"><span class="label cog-label">동계어</span>royal, regal, regulate</div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
