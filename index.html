@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>얼룩말영어학원 단어장 - 중등고난도 26 (어원별 묶음)</title>
+    <title>얼룩말영어학원 단어장 - 27, 28, 29</title>
     <style>
         :root {
             --bg-color: #f3f4f6;
@@ -14,7 +14,8 @@
             --ety-bg: #eff6ff;
             --cog-bg: #fdf2f8;
             --border-color: #e5e7eb;
-            --header-bg: #ffffff;
+            --tab-bg: #ffffff;
+            --tab-inactive: #9ca3af;
         }
         body { 
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; 
@@ -24,19 +25,32 @@
             color: var(--text-main);
         }
         
-        /* 상단 헤더 */
-        .header {
+        /* 상단 탭 네비게이션 */
+        .tab-container {
+            display: flex;
             position: sticky;
             top: 0;
             z-index: 100;
-            background-color: var(--header-bg);
+            background-color: var(--tab-bg);
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             border-bottom: 1px solid var(--border-color);
+        }
+        .tab-btn {
+            flex: 1;
             padding: 16px 0;
             text-align: center;
-            font-size: 1.2rem;
+            font-size: 1.05rem;
             font-weight: 800;
+            color: var(--tab-inactive);
+            background: none;
+            border: none;
+            border-bottom: 3px solid transparent;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .tab-btn.active {
             color: var(--primary-color);
+            border-bottom-color: var(--primary-color);
         }
 
         /* 메인 콘텐츠 영역 */
@@ -44,6 +58,20 @@
             padding: 15px;
             max-width: 500px;
             margin: 0 auto;
+        }
+
+        /* 탭 콘텐츠 숨김/표시 처리 */
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(5px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         /* 어원별 그룹 제목 */
@@ -58,9 +86,7 @@
             text-align: center;
             box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
         }
-        .group-title:first-child {
-            margin-top: 10px;
-        }
+        .group-title:first-child { margin-top: 10px; }
 
         /* 단어 카드 스타일 */
         .card { 
@@ -82,7 +108,7 @@
         .word { font-size: 1.6rem; font-weight: 800; color: #111827; margin-top: 4px; display: block; }
         .meaning { font-size: 1.1rem; font-weight: 600; color: #dc2626; margin-top: 8px; line-height: 1.4; }
         
-        /* 어원/동계어 노출 영역 (토글 제거, 항상 노출) */
+        /* 어원/동계어 노출 영역 (항상 노출) */
         .details-section {
             display: block; 
             margin-top: 12px;
@@ -116,608 +142,1344 @@
 </head>
 <body>
 
-    <!-- 상단 헤더 -->
-    <div class="header">
-        중등고난도 26 (어원별 묶음)
+    <!-- 상단 탭 네비게이션 -->
+    <div class="tab-container">
+        <button class="tab-btn active" onclick="openTab(event, 'day29')">고난도 29</button>
+        <button class="tab-btn" onclick="openTab(event, 'day28')">고난도 28</button>
+        <button class="tab-btn" onclick="openTab(event, 'day27')">고난도 27</button>
     </div>
 
     <div class="content-area">
 
-        <!-- 그룹 1: vovere -->
-        <div class="group-title">🌱 [ vovere 계열 : 맹세하다, 바치다 ]</div>
-        
-        <div class="card">
-            <div class="word-header">
-                <span class="word-num">01</span>
-                <span class="word">devote oneself to</span>
-                <div class="meaning">~에 몰두하다</div>
+        <!-- ==================== 중등고난도 29 ==================== -->
+        <div id="day29" class="tab-content active">
+            
+            <div class="group-title">🌕 [ luna / sol 계열 : 달과 태양 ]</div>
+            
+            <div class="card">
+                <div class="word-header">
+                    <span class="word-num">17</span>
+                    <span class="word">lunar</span>
+                    <div class="meaning">달의[cite: 8]</div>
+                </div>
+                <div class="details-section">
+                    <div class="info-box ety-box"><span class="label ety-label">어원</span>luna(달) + -ar(형용사형 어미)</div>
+                    <div class="info-box cog-box"><span class="label cog-label">동계어</span>lunatic (달의 영향을 받아 미친)</div>
+                </div>
             </div>
-            <div class="details-section">
-                <div class="info-box ety-box"><span class="label ety-label">어원</span>de(완전히) + vovere(맹세하다) → 신에게 자신을 완전히 바치기로 맹세하다</div>
-                <div class="info-box cog-box"><span class="label cog-label">동계어</span>devotion, vote, vow</div>
+
+            <div class="card">
+                <div class="word-header">
+                    <span class="word-num">06</span>
+                    <span class="word">lunar eclipse</span>
+                    <div class="meaning">월식[cite: 8]</div>
+                </div>
+                <div class="details-section">
+                    <div class="info-box ety-box"><span class="label ety-label">어원</span>eclipse (ex: 밖으로 + leipein: 떠나다) → 달이 그림자에 가려 사라짐</div>
+                    <div class="info-box cog-box"><span class="label cog-label">동계어</span>eclipse, elliptical</div>
+                </div>
             </div>
+
+            <div class="card">
+                <div class="word-header">
+                    <span class="word-num">08</span>
+                    <span class="word">lunar calendar</span>
+                    <div class="meaning">음력[cite: 8]</div>
+                </div>
+                <div class="details-section">
+                    <div class="info-box ety-box"><span class="label ety-label">어원</span>달의 주기를 기준으로 한 달력</div>
+                    <div class="info-box cog-box"><span class="label cog-label">동계어</span>calendar</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="word-header">
+                    <span class="word-num">11</span>
+                    <span class="word">lunar new year's day</span>
+                    <div class="meaning">음력설[cite: 8]</div>
+                </div>
+                <div class="details-section">
+                    <div class="info-box ety-box"><span class="label ety-label">어원</span>음력(lunar)으로 새해(new year's day)가 시작되는 날</div>
+                    <div class="info-box cog-box"><span class="label cog-label">동계어</span>year, daily</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="word-header">
+                    <span class="word-num">31</span>
+                    <span class="word">solar</span>
+                    <div class="meaning">태양의[cite: 8]</div>
+                </div>
+                <div class="details-section">
+                    <div class="info-box ety-box"><span class="label ety-label">어원</span>sol(태양) + -ar(형용사형)</div>
+                    <div class="info-box cog-box"><span class="label cog-label">동계어</span>solstice, parasol</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="word-header">
+                    <span class="word-num">15</span>
+                    <span class="word">solar system</span>
+                    <div class="meaning">태양계[cite: 8]</div>
+                </div>
+                <div class="details-section">
+                    <div class="info-box ety-box"><span class="label ety-label">어원</span>태양(solar)을 중심으로 구성된 체계(system)</div>
+                    <div class="info-box cog-box"><span class="label cog-label">동계어</span>systematic</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="word-header">
+                    <span class="word-num">23</span>
+                    <span class="word">solar eclipse</span>
+                    <div class="meaning">일식[cite: 8]</div>
+                </div>
+                <div class="details-section">
+                    <div class="info-box ety-box"><span class="label ety-label">어원</span>달이 태양(solar)을 가려 사라지게(eclipse) 하는 현상</div>
+                    <div class="info-box cog-box"><span class="label cog-label">동계어</span>eclipse</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="word-header">
+                    <span class="word-num">01</span>
+                    <span class="word">total eclipse</span>
+                    <div class="meaning">개기식[cite: 8]</div>
+                </div>
+                <div class="details-section">
+                    <div class="info-box ety-box"><span class="label ety-label">어원</span>total(전체의) + eclipse(가려짐) → 태양이나 달이 완전히 가려지는 현상</div>
+                    <div class="info-box cog-box"><span class="label cog-label">동계어</span>totally, sum total</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="word-header">
+                    <span class="word-num">19</span>
+                    <span class="word">astronomy</span>
+                    <div class="meaning">천문학[cite: 8]</div>
+                </div>
+                <div class="details-section">
+                    <div class="info-box ety-box"><span class="label ety-label">어원</span>astron(별) + nomos(법칙, 학문) → 별의 움직임을 연구하는 학문</div>
+                    <div class="info-box cog-box"><span class="label cog-label">동계어</span>astronaut, astrology</div>
+                </div>
+            </div>
+
+            <div class="group-title">🔄 [ volvere / rota 계열 : 회전하다, 돌다 ]</div>
+
+            <div class="card">
+                <div class="word-header">
+                    <span class="word-num">16</span>
+                    <span class="word">revolve</span>
+                    <div class="meaning">회전하다[시키다][cite: 8]</div>
+                </div>
+                <div class="details-section">
+                    <div class="info-box ety-box"><span class="label ety-label">어원</span>re(다시) + volvere(돌다) → 궤도를 따라 계속해서 빙빙 돌다</div>
+                    <div class="info-box cog-box"><span class="label cog-label">동계어</span>revolution, involve, evolve</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="word-header">
+                    <span class="word-num">26</span>
+                    <span class="word">rotation</span>
+                    <div class="meaning">회전[cite: 8]</div>
+                </div>
+                <div class="details-section">
+                    <div class="info-box ety-box"><span class="label ety-label">어원</span>rota(바퀴) + -tion → 바퀴처럼 축을 중심으로 도는 것</div>
+                    <div class="info-box cog-box"><span class="label cog-label">동계어</span>rotate, rotary</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="word-header">
+                    <span class="word-num">05</span>
+                    <span class="word">orbital</span>
+                    <div class="meaning">궤도의[cite: 8]</div>
+                </div>
+                <div class="details-section">
+                    <div class="info-box ety-box"><span class="label ety-label">어원</span>orbis(원, 바퀴) + -al → 천체가 도는 둥근 길의</div>
+                    <div class="info-box cog-box"><span class="label cog-label">동계어</span>orbit, exorbitant</div>
+                </div>
+            </div>
+
+            <div class="group-title">⚙️ [ autos 계열 : 스스로 움직이는 ]</div>
+
+            <div class="card">
+                <div class="word-header">
+                    <span class="word-num">12</span>
+                    <span class="word">automatic</span>
+                    <div class="meaning">자동의[cite: 8]</div>
+                </div>
+                <div class="details-section">
+                    <div class="info-box ety-box"><span class="label ety-label">어원</span>autos(스스로) + matos(생각하는, 움직이는) → 스스로 알아서 작동하는</div>
+                    <div class="info-box cog-box"><span class="label cog-label">동계어</span>automate, autobiography</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="word-header">
+                    <span class="word-num">32</span>
+                    <span class="word">automated</span>
+                    <div class="meaning">자동의[cite: 8]</div>
+                </div>
+                <div class="details-section">
+                    <div class="info-box ety-box"><span class="label ety-label">어원</span>automate(자동화하다)의 과거분사형</div>
+                    <div class="info-box cog-box"><span class="label cog-label">동계어</span>automation</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="word-header">
+                    <span class="word-num">27</span>
+                    <span class="word">automatic teller machine (ATM)</span>
+                    <div class="meaning">현금 자동 지급기[cite: 8]</div>
+                </div>
+                <div class="details-section">
+                    <div class="info-box ety-box"><span class="label ety-label">어원</span>은행원(teller)을 대신해 스스로(automatic) 처리해주는 기계</div>
+                    <div class="info-box cog-box"><span class="label cog-label">동계어</span>tell, machine</div>
+                </div>
+            </div>
+
+            <div class="group-title">✋ [ manu 계열 : 손, 육체 ]</div>
+
+            <div class="card">
+                <div class="word-header">
+                    <span class="word-num">25</span>
+                    <span class="word">manual</span>
+                    <div class="meaning">손의, 수동의[cite: 8]</div>
+                </div>
+                <div class="details-section">
+                    <div class="info-box ety-box"><span class="label ety-label">어원</span>manus(손) + -al → 기계가 아닌 사람의 손으로 직접 하는</div>
+                    <div class="info-box cog-box"><span class="label cog-label">동계어</span>manufacture, manuscript</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="word-header">
+                    <span class="word-num">07</span>
+                    <span class="word">manual labor</span>
+                    <div class="meaning">손일, 육체노동[cite: 8]</div>
+                </div>
+                <div class="details-section">
+                    <div class="info-box ety-box"><span class="label ety-label">어원</span>손(manual)을 써서 몸으로 직접 하는 일(labor)</div>
+                    <div class="info-box cog-box"><span class="label cog-label">동계어</span>labor, laboratory</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="word-header">
+                    <span class="word-num">21</span>
+                    <span class="word">digital age</span>
+                    <div class="meaning">디지털 시대[cite: 8]</div>
+                </div>
+                <div class="details-section">
+                    <div class="info-box ety-box"><span class="label ety-label">어원</span>digitus(손가락) → 손가락으로 숫자를 세던 것에서 '숫자(0과 1)로 이루어진' 시대</div>
+                    <div class="info-box cog-box"><span class="label cog-label">동계어</span>digit, digital</div>
+                </div>
+            </div>
+
+            <div class="group-title">🎯 [ facere 계열 : 만들다, 효과를 내다 ]</div>
+
+            <div class="card">
+                <div class="word-header">
+                    <span class="word-num">02</span>
+                    <span class="word">effectiveness</span>
+                    <div class="meaning">효율, 능률[cite: 8]</div>
+                </div>
+                <div class="details-section">
+                    <div class="info-box ety-box"><span class="label ety-label">어원</span>ex(밖으로) + facere(만들다) + -ness → 만들어낸 결과가 눈에 띄게 효과적인 상태</div>
+                    <div class="info-box cog-box"><span class="label cog-label">동계어</span>effect, effective, factory</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="word-header">
+                    <span class="word-num">20</span>
+                    <span class="word">efficient</span>
+                    <div class="meaning">능률적인[cite: 8]</div>
+                </div>
+                <div class="details-section">
+                    <div class="info-box ety-box"><span class="label ety-label">어원</span>ex(밖으로) + facere(만들다) + -ent → 낭비 없이 훌륭히 결과를 만들어 내는</div>
+                    <div class="info-box cog-box"><span class="label cog-label">동계어</span>efficiency, deficient</div>
+                </div>
+            </div>
+
+            <div class="group-title">⏱️ [ 속도 및 조절 계열 ]</div>
+
+            <div class="card">
+                <div class="word-header">
+                    <span class="word-num">18</span>
+                    <span class="word">speed up</span>
+                    <div class="meaning">가속하다[cite: 8]</div>
+                </div>
+                <div class="details-section">
+                    <div class="info-box ety-box"><span class="label ety-label">어원</span>구동사 (속도를 위로 끌어올리다)</div>
+                    <div class="info-box cog-box"><span class="label cog-label">동계어</span>speedy</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="word-header">
+                    <span class="word-num">13</span>
+                    <span class="word">accelerator</span>
+                    <div class="meaning">가속 장치[cite: 8]</div>
+                </div>
+                <div class="details-section">
+                    <div class="info-box ety-box"><span class="label ety-label">어원</span>ad(~쪽으로) + celer(빠른) + -or(장치) → 속도를 더 빠르게 만들어주는 부품</div>
+                    <div class="info-box cog-box"><span class="label cog-label">동계어</span>accelerate, celerity</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="word-header">
+                    <span class="word-num">04</span>
+                    <span class="word">adapt</span>
+                    <div class="meaning">조절하다, 조정하다[cite: 8]</div>
+                </div>
+                <div class="details-section">
+                    <div class="info-box ety-box"><span class="label ety-label">어원</span>ad(~에) + aptus(맞는, 적합한) → 새로운 환경에 알맞게 맞추다</div>
+                    <div class="info-box cog-box"><span class="label cog-label">동계어</span>aptitude, adaptable</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="word-header">
+                    <span class="word-num">24</span>
+                    <span class="word">adjustment</span>
+                    <div class="meaning">조절[cite: 8]</div>
+                </div>
+                <div class="details-section">
+                    <div class="info-box ety-box"><span class="label ety-label">어원</span>ad(~에) + juxta(가까이) -> adjust + -ment → 꼭 맞게 다듬고 조절함</div>
+                    <div class="info-box cog-box"><span class="label cog-label">동계어</span>adjust, adjustable</div>
+                </div>
+            </div>
+
+            <div class="group-title">🔍 [ 관찰 및 발견 계열 ]</div>
+
+            <div class="card">
+                <div class="word-header">
+                    <span class="word-num">10</span>
+                    <span class="word">find out</span>
+                    <div class="meaning">발견하다[cite: 8]</div>
+                </div>
+                <div class="details-section">
+                    <div class="info-box ety-box"><span class="label ety-label">어원</span>구동사 (감춰진 것을 찾아내어 밖으로 드러내다)</div>
+                    <div class="info-box cog-box"><span class="label cog-label">동계어</span>find</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="word-header">
+                    <span class="word-num">29</span>
+                    <span class="word">discovery</span>
+                    <div class="meaning">발견[cite: 8]</div>
+                </div>
+                <div class="details-section">
+                    <div class="info-box ety-box"><span class="label ety-label">어원</span>dis(반대, 벗기다) + cover(덮다) + -y → 덮여 있던 뚜껑을 열어 새로운 것을 찾아냄</div>
+                    <div class="info-box cog-box"><span class="label cog-label">동계어</span>discover, cover</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="word-header">
+                    <span class="word-num">14</span>
+                    <span class="word">watch</span>
+                    <div class="meaning">관찰하다[cite: 8]</div>
+                </div>
+                <div class="details-section">
+                    <div class="info-box ety-box"><span class="label ety-label">어원</span>고대 영어 wæccan (깨어 있다, 주시하다)</div>
+                    <div class="info-box cog-box"><span class="label cog-label">동계어</span>watchful</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="word-header">
+                    <span class="word-num">03</span>
+                    <span class="word">observe the principle</span>
+                    <div class="meaning">원칙을 지키다[cite: 8]</div>
+                </div>
+                <div class="details-section">
+                    <div class="info-box ety-box"><span class="label ety-label">어원</span>ob(~앞에) + servare(지키다) → 규칙을 눈앞에 두고 벗어나지 않게 지켜보다/따르다</div>
+                    <div class="info-box cog-box"><span class="label cog-label">동계어</span>observe, observation, reserve</div>
+                </div>
+            </div>
+
+            <div class="group-title">🧩 [ 기타 중요 어원 ]</div>
+
+            <div class="card">
+                <div class="word-header">
+                    <span class="word-num">09</span>
+                    <span class="word">advantage</span>
+                    <div class="meaning">이익[cite: 8]</div>
+                </div>
+                <div class="details-section">
+                    <div class="info-box ety-box"><span class="label ety-label">어원</span>ab(~로부터) + ante(앞에) → 남들보다 한 발 앞서 있어 얻게 되는 유리한 점</div>
+                    <div class="info-box cog-box"><span class="label cog-label">동계어</span>advance, advantageous</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="word-header">
+                    <span class="word-num">22</span>
+                    <span class="word">cause</span>
+                    <div class="meaning">~을 불러일으키다[초래하다][cite: 8]</div>
+                </div>
+                <div class="details-section">
+                    <div class="info-box ety-box"><span class="label ety-label">어원</span>causa(원인, 이유, 소송) → 어떤 일의 근본적인 원인이 되다</div>
+                    <div class="info-box cog-box"><span class="label cog-label">동계어</span>because, causal</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="word-header">
+                    <span class="word-num">28</span>
+                    <span class="word">gadget</span>
+                    <div class="meaning">도구, 장치[cite: 8]</div>
+                </div>
+                <div class="details-section">
+                    <div class="info-box ety-box"><span class="label ety-label">어원</span>프랑스어 gâchette(작은 기계 장치, 걸쇠)에서 유래</div>
+                    <div class="info-box cog-box"><span class="label cog-label">동계어</span>(해당없음)</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="word-header">
+                    <span class="word-num">30</span>
+                    <span class="word">precise</span>
+                    <div class="meaning">정확한[cite: 8]</div>
+                </div>
+                <div class="details-section">
+                    <div class="info-box ety-box"><span class="label ety-label">어원</span>prae(미리) + caedere(자르다) → 군더더기를 깔끔하게 잘라내어 딱 맞아떨어지는</div>
+                    <div class="info-box cog-box"><span class="label cog-label">동계어</span>precision, decide, scissors</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="word-header">
+                    <span class="word-num">33</span>
+                    <span class="word">gravitation</span>
+                    <div class="meaning">중력[cite: 8]</div>
+                </div>
+                <div class="details-section">
+                    <div class="info-box ety-box"><span class="label ety-label">어원</span>gravis(무거운) + -ation → 질량을 가진 물체가 무겁게 서로를 끌어당기는 힘</div>
+                    <div class="info-box cog-box"><span class="label cog-label">동계어</span>gravity, grave</div>
+                </div>
+            </div>
+
         </div>
 
-        <div class="card">
-            <div class="word-header">
-                <span class="word-num">02</span>
-                <span class="word">devotion</span>
-                <div class="meaning">헌신, 전념</div>
+        <!-- ==================== 중등고난도 28 ==================== -->
+        <div id="day28" class="tab-content">
+            
+            <div class="group-title">🌋 [ jacere / rumpere 계열 : 던지다, 터지다 ]</div>
+            
+            <div class="card">
+                <div class="word-header">
+                    <span class="word-num">11</span>
+                    <span class="word">eject</span>
+                    <div class="meaning">폭발하다, 분출하다[cite: 9]</div>
+                </div>
+                <div class="details-section">
+                    <div class="info-box ety-box"><span class="label ety-label">어원</span>ex(밖으로) + jacere(던지다) → 내부의 것을 밖으로 강하게 뿜어내다</div>
+                    <div class="info-box cog-box"><span class="label cog-label">동계어</span>reject, inject, project</div>
+                </div>
             </div>
-            <div class="details-section">
-                <div class="info-box ety-box"><span class="label ety-label">어원</span>de(완전히) + vovere(맹세하다) + -tion</div>
-                <div class="info-box cog-box"><span class="label cog-label">동계어</span>devote, devoted</div>
+
+            <div class="card">
+                <div class="word-header">
+                    <span class="word-num">05</span>
+                    <span class="word">ejection</span>
+                    <div class="meaning">배출[cite: 9]</div>
+                </div>
+                <div class="details-section">
+                    <div class="info-box ety-box"><span class="label ety-label">어원</span>eject(분출하다) + -ion(명사형)</div>
+                    <div class="info-box cog-box"><span class="label cog-label">동계어</span>eject</div>
+                </div>
             </div>
+
+            <div class="card">
+                <div class="word-header">
+                    <span class="word-num">23</span>
+                    <span class="word">erupt</span>
+                    <div class="meaning">내뿜다. 배출하다[cite: 9]</div>
+                </div>
+                <div class="details-section">
+                    <div class="info-box ety-box"><span class="label ety-label">어원</span>ex(밖으로) + rumpere(터지다, 부수다) → 화산이나 용암이 지각을 뚫고 터져 나옴</div>
+                    <div class="info-box cog-box"><span class="label cog-label">동계어</span>interrupt, bankrupt, rupture</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="word-header">
+                    <span class="word-num">32</span>
+                    <span class="word">eruption</span>
+                    <div class="meaning">(화산의) 폭발, 분출[cite: 9]</div>
+                </div>
+                <div class="details-section">
+                    <div class="info-box ety-box"><span class="label ety-label">어원</span>erupt + -ion</div>
+                    <div class="info-box cog-box"><span class="label cog-label">동계어</span>erupt</div>
+                </div>
+            </div>
+
+            <div class="group-title">🌱 [ natura / weather 계열 : 자연 현상 ]</div>
+
+            <div class="card">
+                <div class="word-header">
+                    <span class="word-num">01</span>
+                    <span class="word">natural disaster</span>
+                    <div class="meaning">자연 재해[cite: 9]</div>
+                </div>
+                <div class="details-section">
+                    <div class="info-box ety-box"><span class="label ety-label">어원</span>natural(자연의) + disaster(별의 불길한 배치 -> 재앙)</div>
+                    <div class="info-box cog-box"><span class="label cog-label">동계어</span>nature, naturally</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="word-header">
+                    <span class="word-num">30</span>
+                    <span class="word">natural resources</span>
+                    <div class="meaning">천연자원[cite: 9]</div>
+                </div>
+                <div class="details-section">
+                    <div class="info-box ety-box"><span class="label ety-label">어원</span>자연(natural)에서 나오는, 다시(re) 솟아나는(surgere) 원천들</div>
+                    <div class="info-box cog-box"><span class="label cog-label">동계어</span>resource, source</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="word-header">
+                    <span class="word-num">09</span>
+                    <span class="word">weather forecast</span>
+                    <div class="meaning">일기 예보[cite: 9]</div>
+                </div>
+                <div class="details-section">
+                    <div class="info-box ety-box"><span class="label ety-label">어원</span>weather(날씨) + fore(미리) + cast(던지다, 예상하다)</div>
+                    <div class="info-box cog-box"><span class="label cog-label">동계어</span>forecast, cast, broadcast</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="word-header">
+                    <span class="word-num">28</span>
+                    <span class="word">predict</span>
+                    <div class="meaning">예상하다, 예보하다[cite: 9]</div>
+                </div>
+                <div class="details-section">
+                    <div class="info-box ety-box"><span class="label ety-label">어원</span>pre(미리) + dicere(말하다) → 일어날 일을 미리 말하다</div>
+                    <div class="info-box cog-box"><span class="label cog-label">동계어</span>prediction, dictate, dictionary</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="word-header">
+                    <span class="word-num">27</span>
+                    <span class="word">severe weather conditions</span>
+                    <div class="meaning">악천후[cite: 9]</div>
+                </div>
+                <div class="details-section">
+                    <div class="info-box ety-box"><span class="label ety-label">어원</span>severe(가혹한, 심한) + 날씨 조건들</div>
+                    <div class="info-box cog-box"><span class="label cog-label">동계어</span>severely, persevere</div>
+                </div>
+            </div>
+
+            <div class="group-title">💧 [ pur- / sume- 계열 : 깨끗함과 소비 ]</div>
+
+            <div class="card">
+                <div class="word-header">
+                    <span class="word-num">03</span>
+                    <span class="word">pure</span>
+                    <div class="meaning">순수한[cite: 9]</div>
+                </div>
+                <div class="details-section">
+                    <div class="info-box ety-box"><span class="label ety-label">어원</span>purus(깨끗한, 오염되지 않은)</div>
+                    <div class="info-box cog-box"><span class="label cog-label">동계어</span>purity, purify</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="word-header">
+                    <span class="word-num">08</span>
+                    <span class="word">purification</span>
+                    <div class="meaning">정화[cite: 9]</div>
+                </div>
+                <div class="details-section">
+                    <div class="info-box ety-box"><span class="label ety-label">어원</span>purus(순수한) + facere(만들다) + -tion → 불순물을 걸러 깨끗하게 만듦</div>
+                    <div class="info-box cog-box"><span class="label cog-label">동계어</span>purify, pure</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="word-header">
+                    <span class="word-num">18</span>
+                    <span class="word">consume</span>
+                    <div class="meaning">소비하다, 소모하다[cite: 9]</div>
+                </div>
+                <div class="details-section">
+                    <div class="info-box ety-box"><span class="label ety-label">어원</span>con(완전히) + sumere(취하다) → 자원을 몽땅 가져다 써버리다</div>
+                    <div class="info-box cog-box"><span class="label cog-label">동계어</span>consumer, assume, resume</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="word-header">
+                    <span class="word-num">22</span>
+                    <span class="word">deplete</span>
+                    <div class="meaning">다 써 버리다[cite: 9]</div>
+                </div>
+                <div class="details-section">
+                    <div class="info-box ety-box"><span class="label ety-label">어원</span>de(비우는, 반대의) + plere(채우다) → 채워져 있던 것을 텅 비게 만들다</div>
+                    <div class="info-box cog-box"><span class="label cog-label">동계어</span>depletion, complete, plenty</div>
+                </div>
+            </div>
+
+            <div class="group-title">🪞 [ flect 계열 : 구부러지다, 반사하다 ]</div>
+
+            <div class="card">
+                <div class="word-header">
+                    <span class="word-num">15</span>
+                    <span class="word">reflection</span>
+                    <div class="meaning">반사, 반영[cite: 9]</div>
+                </div>
+                <div class="details-section">
+                    <div class="info-box ety-box"><span class="label ety-label">어원</span>re(뒤로) + flectere(구부리다) + -ion → 빛이 거울에 맞고 다시 뒤로 꺾여 나옴</div>
+                    <div class="info-box cog-box"><span class="label cog-label">동계어</span>reflect, flexible, deflect</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="word-header">
+                    <span class="word-num">31</span>
+                    <span class="word">reflect on</span>
+                    <div class="meaning">~을 곰곰이 생각하다[cite: 9]</div>
+                </div>
+                <div class="details-section">
+                    <div class="info-box ety-box"><span class="label ety-label">어원</span>마음속으로 생각(기억)을 '다시 튕겨내어(reflect)' 되돌아보다</div>
+                    <div class="info-box cog-box"><span class="label cog-label">동계어</span>reflection</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="word-header">
+                    <span class="word-num">21</span>
+                    <span class="word">mirror</span>
+                    <div class="meaning">반사하다[cite: 9]</div>
+                </div>
+                <div class="details-section">
+                    <div class="info-box ety-box"><span class="label ety-label">어원</span>mirari(놀라다, 감탄하며 바라보다) → 거울의 반사 작용을 동사화</div>
+                    <div class="info-box cog-box"><span class="label cog-label">동계어</span>mirage, miracle</div>
+                </div>
+            </div>
+
+            <div class="group-title">🏗️ [ struct 계열 : 세우다, 부수다 ]</div>
+
+            <div class="card">
+                <div class="word-header">
+                    <span class="word-num">19</span>
+                    <span class="word">constructive</span>
+                    <div class="meaning">건설적인[cite: 9]</div>
+                </div>
+                <div class="details-section">
+                    <div class="info-box ety-box"><span class="label ety-label">어원</span>con(함께) + struere(세우다, 쌓다) + -ive → 함께 쌓아 올려 도움이 되는</div>
+                    <div class="info-box cog-box"><span class="label cog-label">동계어</span>construct, structure, instruct</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="word-header">
+                    <span class="word-num">02</span>
+                    <span class="word">destroy</span>
+                    <div class="meaning">난파하다, 파괴하다[cite: 9]</div>
+                </div>
+                <div class="details-section">
+                    <div class="info-box ety-box"><span class="label ety-label">어원</span>de(반대로, 무너뜨려) + struere(쌓다) → 공들여 세워둔 것을 허물어버리다</div>
+                    <div class="info-box cog-box"><span class="label cog-label">동계어</span>destruction, construct</div>
+                </div>
+            </div>
+
+            <div class="group-title">🌿 [ 자연 지형 및 환경 계열 ]</div>
+
+            <div class="card">
+                <div class="word-header">
+                    <span class="word-num">06</span>
+                    <span class="word">marsh</span>
+                    <div class="meaning">늪[cite: 9]</div>
+                </div>
+                <div class="details-section">
+                    <div class="info-box ety-box"><span class="label ety-label">어원</span>고대 영어 mersc (물이 많은 질척한 땅)</div>
+                    <div class="info-box cog-box"><span class="label cog-label">동계어</span>marshy, marine (먼 어원적 친척)</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="word-header">
+                    <span class="word-num">20</span>
+                    <span class="word">swampy</span>
+                    <div class="meaning">늪에 있는[cite: 9]</div>
+                </div>
+                <div class="details-section">
+                    <div class="info-box ety-box"><span class="label ety-label">어원</span>swamp(늪, 수렁) + -y(형용사형)</div>
+                    <div class="info-box cog-box"><span class="label cog-label">동계어</span>swamp</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="word-header">
+                    <span class="word-num">17</span>
+                    <span class="word">swamp down</span>
+                    <div class="meaning">꿀꺽 삼키다[cite: 9]</div>
+                </div>
+                <div class="details-section">
+                    <div class="info-box ety-box"><span class="label ety-label">어원</span>늪(swamp)이 무언가를 쑥 빨아들여 삼키는 모습에서 유래</div>
+                    <div class="info-box cog-box"><span class="label cog-label">동계어</span>swampy</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="word-header">
+                    <span class="word-num">26</span>
+                    <span class="word">moist</span>
+                    <div class="meaning">습한, 촉촉한[cite: 9]</div>
+                </div>
+                <div class="details-section">
+                    <div class="info-box ety-box"><span class="label ety-label">어원</span>고대 프랑스어 moiste (물기가 있는, 젖은)</div>
+                    <div class="info-box cog-box"><span class="label cog-label">동계어</span>moisture, moisturize</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="word-header">
+                    <span class="word-num">04</span>
+                    <span class="word">valley</span>
+                    <div class="meaning">협곡[cite: 9]</div>
+                </div>
+                <div class="details-section">
+                    <div class="info-box ety-box"><span class="label ety-label">어원</span>vallis(산등성이 사이의 깊은 골짜기)</div>
+                    <div class="info-box cog-box"><span class="label cog-label">동계어</span>vale</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="word-header">
+                    <span class="word-num">24</span>
+                    <span class="word">deep</span>
+                    <div class="meaning">깊은[cite: 9]</div>
+                </div>
+                <div class="details-section">
+                    <div class="info-box ety-box"><span class="label ety-label">어원</span>고대 영어 deop (바닥까지의 거리가 먼)</div>
+                    <div class="info-box cog-box"><span class="label cog-label">동계어</span>depth, deepen</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="word-header">
+                    <span class="word-num">10</span>
+                    <span class="word">deepen</span>
+                    <div class="meaning">깊게 하다[cite: 9]</div>
+                </div>
+                <div class="details-section">
+                    <div class="info-box ety-box"><span class="label ety-label">어원</span>deep(깊은) + -en(동사형)</div>
+                    <div class="info-box cog-box"><span class="label cog-label">동계어</span>deep</div>
+                </div>
+            </div>
+
+            <div class="group-title">🧩 [ 기타 중요 어원 ]</div>
+
+            <div class="card">
+                <div class="word-header">
+                    <span class="word-num">25</span>
+                    <span class="word">happen</span>
+                    <div class="meaning">발생하다. 일어나다[cite: 9]</div>
+                </div>
+                <div class="details-section">
+                    <div class="info-box ety-box"><span class="label ety-label">어원</span>hap(우연, 운) + -en → 우연히 무언가가 생겨나다</div>
+                    <div class="info-box cog-box"><span class="label cog-label">동계어</span>happy, mishap</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="word-header">
+                    <span class="word-num">12</span>
+                    <span class="word">occurrence</span>
+                    <div class="meaning">발생[cite: 9]</div>
+                </div>
+                <div class="details-section">
+                    <div class="info-box ety-box"><span class="label ety-label">어원</span>ob(~에 맞서, 향하여) + currere(달리다) + -ence → 눈앞으로 달려와 벌어진 일</div>
+                    <div class="info-box cog-box"><span class="label cog-label">동계어</span>occur, current, currency</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="word-header">
+                    <span class="word-num">07</span>
+                    <span class="word">centigrade</span>
+                    <div class="meaning">섭씨[cite: 9]</div>
+                </div>
+                <div class="details-section">
+                    <div class="info-box ety-box"><span class="label ety-label">어원</span>centi(100) + gradus(걸음, 단계) → 물이 어는점과 끓는점 사이를 100단계로 나눈 온도계</div>
+                    <div class="info-box cog-box"><span class="label cog-label">동계어</span>century, grade, gradual</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="word-header">
+                    <span class="word-num">13</span>
+                    <span class="word">severely</span>
+                    <div class="meaning">심하게[cite: 9]</div>
+                </div>
+                <div class="details-section">
+                    <div class="info-box ety-box"><span class="label ety-label">어원</span>severus(가혹한, 엄격한) + -ly</div>
+                    <div class="info-box cog-box"><span class="label cog-label">동계어</span>severe, persevere</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="word-header">
+                    <span class="word-num">14</span>
+                    <span class="word">protect</span>
+                    <div class="meaning">보호하다[cite: 9]</div>
+                </div>
+                <div class="details-section">
+                    <div class="info-box ety-box"><span class="label ety-label">어원</span>pro(앞에서) + tegere(덮다) → 위험이 오지 못하게 앞에서 가려주다</div>
+                    <div class="info-box cog-box"><span class="label cog-label">동계어</span>protection, detect</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="word-header">
+                    <span class="word-num">16</span>
+                    <span class="word">Antarctic</span>
+                    <div class="meaning">남극의[cite: 9]</div>
+                </div>
+                <div class="details-section">
+                    <div class="info-box ety-box"><span class="label ety-label">어원</span>anti(반대의) + arktos(곰, 북쪽 하늘의 큰곰자리) → 북극곰 자리가 있는 북쪽의 반대편</div>
+                    <div class="info-box cog-box"><span class="label cog-label">동계어</span>Arctic (북극의)</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="word-header">
+                    <span class="word-num">29</span>
+                    <span class="word">be surrounded with [by]</span>
+                    <div class="meaning">~로 둘러싸이다[cite: 9]</div>
+                </div>
+                <div class="details-section">
+                    <div class="info-box ety-box"><span class="label ety-label">어원</span>sur(위로, 넘어서) + undare(물결치다) → 사방에서 물결처럼 에워싸다</div>
+                    <div class="info-box cog-box"><span class="label cog-label">동계어</span>surround, abound</div>
+                </div>
+            </div>
+
         </div>
 
-        <div class="card">
-            <div class="word-header">
-                <span class="word-num">03</span>
-                <span class="word">devoted</span>
-                <div class="meaning">헌신적인</div>
-            </div>
-            <div class="details-section">
-                <div class="info-box ety-box"><span class="label ety-label">어원</span>devote(바치다)의 과거분사형</div>
-                <div class="info-box cog-box"><span class="label cog-label">동계어</span>devote, devotion</div>
-            </div>
-        </div>
+        <!-- ==================== 중등고난도 27 ==================== -->
+        <div id="day27" class="tab-content">
+            
+            <div class="group-title">🧬 [ bio / gene / cell 계열 : 생명과 유전 ]</div>
 
-        <!-- 그룹 2: servare -->
-        <div class="group-title">🌱 [ servare 계열 : 지키다, 보존하다 ]</div>
+            <div class="card">
+                <div class="word-header">
+                    <span class="word-num">06</span>
+                    <span class="word">biologist</span>
+                    <div class="meaning">생물학자[cite: 10]</div>
+                </div>
+                <div class="details-section">
+                    <div class="info-box ety-box"><span class="label ety-label">어원</span>bio(생명) + logy(학문) + -ist(사람)</div>
+                    <div class="info-box cog-box"><span class="label cog-label">동계어</span>biology, biography, biological</div>
+                </div>
+            </div>
 
-        <div class="card">
-            <div class="word-header">
-                <span class="word-num">04</span>
-                <span class="word">preserve</span>
-                <div class="meaning">보존하다</div>
+            <div class="card">
+                <div class="word-header">
+                    <span class="word-num">11</span>
+                    <span class="word">biological</span>
+                    <div class="meaning">생물학의[cite: 10]</div>
+                </div>
+                <div class="details-section">
+                    <div class="info-box ety-box"><span class="label ety-label">어원</span>bio(생명) + logy(학문) + -cal(형용사형)</div>
+                    <div class="info-box cog-box"><span class="label cog-label">동계어</span>biology, biologist</div>
+                </div>
             </div>
-            <div class="details-section">
-                <div class="info-box ety-box"><span class="label ety-label">어원</span>prae(미리) + servare(지키다) → 손상되기 전에 미리 지키다</div>
-                <div class="info-box cog-box"><span class="label cog-label">동계어</span>preservation, reserve, conserve</div>
-            </div>
-        </div>
 
-        <div class="card">
-            <div class="word-header">
-                <span class="word-num">05</span>
-                <span class="word">conservation</span>
-                <div class="meaning">보존, 보호</div>
+            <div class="card">
+                <div class="word-header">
+                    <span class="word-num">02</span>
+                    <span class="word">genetics</span>
+                    <div class="meaning">유전학[cite: 10]</div>
+                </div>
+                <div class="details-section">
+                    <div class="info-box ety-box"><span class="label ety-label">어원</span>gene(유전, 발생) + -tics(학문) → 생명의 기원과 유전을 다루는 학문</div>
+                    <div class="info-box cog-box"><span class="label cog-label">동계어</span>gene, generate, genetic</div>
+                </div>
             </div>
-            <div class="details-section">
-                <div class="info-box ety-box"><span class="label ety-label">어원</span>con(함께, 완전히) + servare(지키다) → 함께 힘을 모아 온전히 지켜냄</div>
-                <div class="info-box cog-box"><span class="label cog-label">동계어</span>conserve, conservative, preserve</div>
-            </div>
-        </div>
 
-        <div class="card">
-            <div class="word-header">
-                <span class="word-num">06</span>
-                <span class="word">conservative</span>
-                <div class="meaning">보수적인</div>
+            <div class="card">
+                <div class="word-header">
+                    <span class="word-num">23</span>
+                    <span class="word">genetic</span>
+                    <div class="meaning">유전의, 유전학의[cite: 10]</div>
+                </div>
+                <div class="details-section">
+                    <div class="info-box ety-box"><span class="label ety-label">어원</span>gene(유전인자) + -tic(형용사형)</div>
+                    <div class="info-box cog-box"><span class="label cog-label">동계어</span>genetics, gene</div>
+                </div>
             </div>
-            <div class="details-section">
-                <div class="info-box ety-box"><span class="label ety-label">어원</span>con(함께, 완전히) + servare(지키다) → 기존의 가치나 체제를 온전히 지키려는</div>
-                <div class="info-box cog-box"><span class="label cog-label">동계어</span>conserve, conservation</div>
-            </div>
-        </div>
 
-        <!-- 그룹 3: scandere -->
-        <div class="group-title">🌱 [ scandere 계열 : 오르다, 가다 ]</div>
+            <div class="card">
+                <div class="word-header">
+                    <span class="word-num">05</span>
+                    <span class="word">cellular</span>
+                    <div class="meaning">세포의[cite: 10]</div>
+                </div>
+                <div class="details-section">
+                    <div class="info-box ety-box"><span class="label ety-label">어원</span>cella(작은 방) + -ar → 벌집의 작은 방처럼 생긴 생물의 기본 단위</div>
+                    <div class="info-box cog-box"><span class="label cog-label">동계어</span>cell, cellar</div>
+                </div>
+            </div>
 
-        <div class="card">
-            <div class="word-header">
-                <span class="word-num">07</span>
-                <span class="word">ascend</span>
-                <div class="meaning">올라가다</div>
+            <div class="card">
+                <div class="word-header">
+                    <span class="word-num">12</span>
+                    <span class="word">red [white] blood cell</span>
+                    <div class="meaning">적[백]혈구[cite: 10]</div>
+                </div>
+                <div class="details-section">
+                    <div class="info-box ety-box"><span class="label ety-label">어원</span>붉은색[흰색] 피 + cell(작은 방, 세포)</div>
+                    <div class="info-box cog-box"><span class="label cog-label">동계어</span>cellular, blood</div>
+                </div>
             </div>
-            <div class="details-section">
-                <div class="info-box ety-box"><span class="label ety-label">어원</span>ad(~쪽으로) + scandere(오르다) → 위를 향해 오르다</div>
-                <div class="info-box cog-box"><span class="label cog-label">동계어</span>ascent, descend, transcend</div>
-            </div>
-        </div>
 
-        <div class="card">
-            <div class="word-header">
-                <span class="word-num">08</span>
-                <span class="word">descend from</span>
-                <div class="meaning">~의 자손이다</div>
+            <div class="card">
+                <div class="word-header">
+                    <span class="word-num">33</span>
+                    <span class="word">room</span>
+                    <div class="meaning">작은 방, 독방[cite: 10]</div>
+                </div>
+                <div class="details-section">
+                    <div class="info-box ety-box"><span class="label ety-label">어원</span>고대 영어 rum (비어 있는 공간, 여지) → 'cell'과 의미망 공유</div>
+                    <div class="info-box cog-box"><span class="label cog-label">동계어</span>roomy</div>
+                </div>
             </div>
-            <div class="details-section">
-                <div class="info-box ety-box"><span class="label ety-label">어원</span>de(아래로) + scandere(오르다/가다) → 가계도를 따라 아래로 이어지다</div>
-                <div class="info-box cog-box"><span class="label cog-label">동계어</span>descendant, ascend</div>
-            </div>
-        </div>
 
-        <div class="card">
-            <div class="word-header">
-                <span class="word-num">09</span>
-                <span class="word">descendant</span>
-                <div class="meaning">자손</div>
+            <div class="card">
+                <div class="word-header">
+                    <span class="word-num">09</span>
+                    <span class="word">living</span>
+                    <div class="meaning">살아 있는, 생물인[cite: 10]</div>
+                </div>
+                <div class="details-section">
+                    <div class="info-box ety-box"><span class="label ety-label">어원</span>live(살다) + -ing</div>
+                    <div class="info-box cog-box"><span class="label cog-label">동계어</span>live, life, alive</div>
+                </div>
             </div>
-            <div class="details-section">
-                <div class="info-box ety-box"><span class="label ety-label">어원</span>de(아래로) + scandere(오르다/가다) + -ant(사람) → 가계도상 아래로 이어진 사람</div>
-                <div class="info-box cog-box"><span class="label cog-label">동계어</span>descend, ascend</div>
-            </div>
-        </div>
 
-        <!-- 그룹 4: parere -->
-        <div class="group-title">🌱 [ parere 계열 : 눈에 보이다 ]</div>
+            <div class="card">
+                <div class="word-header">
+                    <span class="word-num">29</span>
+                    <span class="word">living</span>
+                    <div class="meaning">살아 있는[cite: 10]</div>
+                </div>
+                <div class="details-section">
+                    <div class="info-box ety-box"><span class="label ety-label">어원</span>live(살다) + -ing</div>
+                    <div class="info-box cog-box"><span class="label cog-label">동계어</span>live, life</div>
+                </div>
+            </div>
 
-        <div class="card">
-            <div class="word-header">
-                <span class="word-num">10</span>
-                <span class="word">appear</span>
-                <div class="meaning">나타나다</div>
+            <div class="card">
+                <div class="word-header">
+                    <span class="word-num">01</span>
+                    <span class="word">inanimate</span>
+                    <div class="meaning">죽은, 무생물의[cite: 10]</div>
+                </div>
+                <div class="details-section">
+                    <div class="info-box ety-box"><span class="label ety-label">어원</span>in(없는, 부정) + anima(생명, 영혼) + -ate → 영혼이나 생명이 불어넣어지지 않은</div>
+                    <div class="info-box cog-box"><span class="label cog-label">동계어</span>animate, animal, animation</div>
+                </div>
             </div>
-            <div class="details-section">
-                <div class="info-box ety-box"><span class="label ety-label">어원</span>ad(~쪽으로) + parere(눈에 보이다) → 시야 안으로 들어오다</div>
-                <div class="info-box cog-box"><span class="label cog-label">동계어</span>appearance, apparent, transparent</div>
-            </div>
-        </div>
 
-        <div class="card">
-            <div class="word-header">
-                <span class="word-num">11</span>
-                <span class="word">disappearance</span>
-                <div class="meaning">소멸, 실종</div>
-            </div>
-            <div class="details-section">
-                <div class="info-box ety-box"><span class="label ety-label">어원</span>dis(반대) + appearance(나타남) → 눈앞에 나타나 있던 것이 없어짐</div>
-                <div class="info-box cog-box"><span class="label cog-label">동계어</span>disappear, appear, apparent</div>
-            </div>
-        </div>
+            <div class="group-title">🧪 [ chem / mater / tox 계열 : 화학과 물질 ]</div>
 
-        <!-- 그룹 5: signum -->
-        <div class="group-title">🌱 [ signum 계열 : 표시하다 ]</div>
+            <div class="card">
+                <div class="word-header">
+                    <span class="word-num">15</span>
+                    <span class="word">chemist</span>
+                    <div class="meaning">화학자[cite: 10]</div>
+                </div>
+                <div class="details-section">
+                    <div class="info-box ety-box"><span class="label ety-label">어원</span>alchimia(연금술)에서 파생된 chem + -ist(사람)</div>
+                    <div class="info-box cog-box"><span class="label cog-label">동계어</span>chemical, alchemy</div>
+                </div>
+            </div>
 
-        <div class="card">
-            <div class="word-header">
-                <span class="word-num">12</span>
-                <span class="word">significant</span>
-                <div class="meaning">중요한, 의미 있는</div>
+            <div class="card">
+                <div class="word-header">
+                    <span class="word-num">16</span>
+                    <span class="word">chemical</span>
+                    <div class="meaning">화학의; 화학 제품, 화학 약품[cite: 10]</div>
+                </div>
+                <div class="details-section">
+                    <div class="info-box ety-box"><span class="label ety-label">어원</span>chem(화학) + -ical</div>
+                    <div class="info-box cog-box"><span class="label cog-label">동계어</span>chemistry, chemist</div>
+                </div>
             </div>
-            <div class="details-section">
-                <div class="info-box ety-box"><span class="label ety-label">어원</span>signum(표시) + facere(만들다) → 뚜렷하게 표시가 날 만큼 중요한</div>
-                <div class="info-box cog-box"><span class="label cog-label">동계어</span>significance, signify, sign</div>
-            </div>
-        </div>
 
-        <div class="card">
-            <div class="word-header">
-                <span class="word-num">13</span>
-                <span class="word">significance</span>
-                <div class="meaning">중요성, 의미</div>
+            <div class="card">
+                <div class="word-header">
+                    <span class="word-num">27</span>
+                    <span class="word">chemical element</span>
+                    <div class="meaning">화학 원소[cite: 10]</div>
+                </div>
+                <div class="details-section">
+                    <div class="info-box ety-box"><span class="label ety-label">어원</span>화학적인(chemical) + 기본 구성 성분(element)</div>
+                    <div class="info-box cog-box"><span class="label cog-label">동계어</span>elementary</div>
+                </div>
             </div>
-            <div class="details-section">
-                <div class="info-box ety-box"><span class="label ety-label">어원</span>signum(표시) + facere(만들다) → 표시를 남길 만큼 중요한 의미가 있음</div>
-                <div class="info-box cog-box"><span class="label cog-label">동계어</span>significant, signify, sign</div>
-            </div>
-        </div>
 
-        <!-- 그룹 6: oriri -->
-        <div class="group-title">🌱 [ oriri 계열 : 떠오르다, 시작되다 ]</div>
+            <div class="card">
+                <div class="word-header">
+                    <span class="word-num">10</span>
+                    <span class="word">elementary</span>
+                    <div class="meaning">기본이 되는; 원소의; 초등학교의[cite: 10]</div>
+                </div>
+                <div class="details-section">
+                    <div class="info-box ety-box"><span class="label ety-label">어원</span>elementum(근본 물질, 알파벳의 첫 글자들 L-M-N에서 유래했다는 설) + -ary → 가장 기초적이고 근본이 되는</div>
+                    <div class="info-box cog-box"><span class="label cog-label">동계어</span>element, elemental</div>
+                </div>
+            </div>
 
-        <div class="card">
-            <div class="word-header">
-                <span class="word-num">14</span>
-                <span class="word">original</span>
-                <div class="meaning">원래의</div>
+            <div class="card">
+                <div class="word-header">
+                    <span class="word-num">28</span>
+                    <span class="word">material</span>
+                    <div class="meaning">물질[cite: 10]</div>
+                </div>
+                <div class="details-section">
+                    <div class="info-box ety-box"><span class="label ety-label">어원</span>mater(어머니, 나무의 줄기) → 만물을 낳는 기본 재료와 근원</div>
+                    <div class="info-box cog-box"><span class="label cog-label">동계어</span>matter, maternal</div>
+                </div>
             </div>
-            <div class="details-section">
-                <div class="info-box ety-box"><span class="label ety-label">어원</span>oriri(떠오르다, 시작되다) → 해가 떠오르는 첫 시작점의</div>
-                <div class="info-box cog-box"><span class="label cog-label">동계어</span>origin, originate, orient</div>
-            </div>
-        </div>
 
-        <div class="card">
-            <div class="word-header">
-                <span class="word-num">15</span>
-                <span class="word">originate</span>
-                <div class="meaning">유래하다</div>
+            <div class="card">
+                <div class="word-header">
+                    <span class="word-num">31</span>
+                    <span class="word">toxin</span>
+                    <div class="meaning">독소, 독성 물질[cite: 10]</div>
+                </div>
+                <div class="details-section">
+                    <div class="info-box ety-box"><span class="label ety-label">어원</span>toxicum(활에 바르는 독) + -in(화학 물질 접미사)</div>
+                    <div class="info-box cog-box"><span class="label cog-label">동계어</span>toxic, detox</div>
+                </div>
             </div>
-            <div class="details-section">
-                <div class="info-box ety-box"><span class="label ety-label">어원</span>oriri(떠오르다, 시작되다) + -ate(동사형)</div>
-                <div class="info-box cog-box"><span class="label cog-label">동계어</span>origin, original</div>
-            </div>
-        </div>
 
-        <!-- 그룹 7: place -->
-        <div class="group-title">🌱 [ place 계열 : 장소, 두다 ]</div>
+            <div class="card">
+                <div class="word-header">
+                    <span class="word-num">08</span>
+                    <span class="word">poisonous</span>
+                    <div class="meaning">유독한[cite: 10]</div>
+                </div>
+                <div class="details-section">
+                    <div class="info-box ety-box"><span class="label ety-label">어원</span>potio(마시는 약 -> 독약) + -ous → 먹으면 치명적인 성질을 가진</div>
+                    <div class="info-box cog-box"><span class="label cog-label">동계어</span>poison, potion</div>
+                </div>
+            </div>
 
-        <div class="card">
-            <div class="word-header">
-                <span class="word-num">16</span>
-                <span class="word">replace A with B</span>
-                <div class="meaning">A를 B로 바꾸다</div>
+            <div class="card">
+                <div class="word-header">
+                    <span class="word-num">37</span>
+                    <span class="word">acidic</span>
+                    <div class="meaning">[화학] 산(성)의[cite: 10]</div>
+                </div>
+                <div class="details-section">
+                    <div class="info-box ety-box"><span class="label ety-label">어원</span>acidus(신맛이 나는, 날카로운) + -ic</div>
+                    <div class="info-box cog-box"><span class="label cog-label">동계어</span>acid, acute</div>
+                </div>
             </div>
-            <div class="details-section">
-                <div class="info-box ety-box"><span class="label ety-label">어원</span>re(다시) + place(장소, 두다) → 있던 것을 치우고 다시 다른 것을 그 자리에 두다</div>
-                <div class="info-box cog-box"><span class="label cog-label">동계어</span>replacement, place</div>
-            </div>
-        </div>
 
-        <div class="card">
-            <div class="word-header">
-                <span class="word-num">17</span>
-                <span class="word">replacement</span>
-                <div class="meaning">대체, 교환</div>
-            </div>
-            <div class="details-section">
-                <div class="info-box ety-box"><span class="label ety-label">어원</span>replace(다시 배치하다) + -ment(명사형)</div>
-                <div class="info-box cog-box"><span class="label cog-label">동계어</span>replace, place</div>
-            </div>
-        </div>
+            <div class="group-title">🧊 [ melt / solve 계열 : 녹다, 풀리다 ]</div>
 
-        <!-- 그룹 8: sequi -->
-        <div class="group-title">🌱 [ sequi 계열 : 따르다 ]</div>
+            <div class="card">
+                <div class="word-header">
+                    <span class="word-num">39</span>
+                    <span class="word">dissolve</span>
+                    <div class="meaning">녹다. 녹이다[cite: 10]</div>
+                </div>
+                <div class="details-section">
+                    <div class="info-box ety-box"><span class="label ety-label">어원</span>dis(산산이, 멀리) + solvere(풀다) → 단단히 결합된 입자를 멀리 풀어 해치다</div>
+                    <div class="info-box cog-box"><span class="label cog-label">동계어</span>solve, solution, resolve</div>
+                </div>
+            </div>
 
-        <div class="card">
-            <div class="word-header">
-                <span class="word-num">18</span>
-                <span class="word">sequential</span>
-                <div class="meaning">순차적인</div>
+            <div class="card">
+                <div class="word-header">
+                    <span class="word-num">35</span>
+                    <span class="word">meltable</span>
+                    <div class="meaning">녹기 쉬운[cite: 10]</div>
+                </div>
+                <div class="details-section">
+                    <div class="info-box ety-box"><span class="label ety-label">어원</span>melt(열로 녹이다) + -able(가능한)</div>
+                    <div class="info-box cog-box"><span class="label cog-label">동계어</span>melt</div>
+                </div>
             </div>
-            <div class="details-section">
-                <div class="info-box ety-box"><span class="label ety-label">어원</span>sequi(따르다) + -ent + -ial → 순서대로 차례차례 뒤따르는</div>
-                <div class="info-box cog-box"><span class="label cog-label">동계어</span>sequence, sequel</div>
-            </div>
-        </div>
 
-        <div class="card">
-            <div class="word-header">
-                <span class="word-num">19</span>
-                <span class="word">out of sequence</span>
-                <div class="meaning">순서가 엉망인</div>
+            <div class="card">
+                <div class="word-header">
+                    <span class="word-num">38</span>
+                    <span class="word">melt away</span>
+                    <div class="meaning">서서히 사라지다[cite: 10]</div>
+                </div>
+                <div class="details-section">
+                    <div class="info-box ety-box"><span class="label ety-label">어원</span>얼음이 녹아(melt) 점차 흔적 없이 멀어짐(away)</div>
+                    <div class="info-box cog-box"><span class="label cog-label">동계어</span>meltable</div>
+                </div>
             </div>
-            <div class="details-section">
-                <div class="info-box ety-box"><span class="label ety-label">어원</span>sequi(따르다) → 뒤따라오는 순서(sequence)에서 벗어난(out of)</div>
-                <div class="info-box cog-box"><span class="label cog-label">동계어</span>sequential, consequence</div>
-            </div>
-        </div>
 
-        <!-- 그룹 9: sedere -->
-        <div class="group-title">🌱 [ sedere 계열 : 앉다, 정착하다 ]</div>
+            <div class="card">
+                <div class="word-header">
+                    <span class="word-num">18</span>
+                    <span class="word">freeze</span>
+                    <div class="meaning">얼다[cite: 10]</div>
+                </div>
+                <div class="details-section">
+                    <div class="info-box ety-box"><span class="label ety-label">어원</span>고대 영어 freosan (몹시 차가워져 굳어지다)</div>
+                    <div class="info-box cog-box"><span class="label cog-label">동계어</span>freezer, frost</div>
+                </div>
+            </div>
 
-        <div class="card">
-            <div class="word-header">
-                <span class="word-num">20</span>
-                <span class="word">settlement</span>
-                <div class="meaning">정착; 합의, 해결</div>
-            </div>
-            <div class="details-section">
-                <div class="info-box ety-box"><span class="label ety-label">어원</span>settle(앉히다, 안정시키다) + -ment → 갈등이나 흔들림이 가라앉아 확정된 상태</div>
-                <div class="info-box cog-box"><span class="label cog-label">동계어</span>settle, settler, seat</div>
-            </div>
-        </div>
+            <div class="group-title">🔗 [ tach / stinguere 계열 : 붙이다, 찌르다 ]</div>
 
-        <div class="card">
-            <div class="word-header">
-                <span class="word-num">21</span>
-                <span class="word">assess</span>
-                <div class="meaning">평가하다</div>
+            <div class="card">
+                <div class="word-header">
+                    <span class="word-num">21</span>
+                    <span class="word">attach</span>
+                    <div class="meaning">붙이다[cite: 10]</div>
+                </div>
+                <div class="details-section">
+                    <div class="info-box ety-box"><span class="label ety-label">어원</span>ad(~에) + stakka(말뚝) → 말뚝에 단단히 매어 고정시키다</div>
+                    <div class="info-box cog-box"><span class="label cog-label">동계어</span>attachment, attack</div>
+                </div>
             </div>
-            <div class="details-section">
-                <div class="info-box ety-box"><span class="label ety-label">어원</span>ad(~곁에) + sedere(앉다) → 재판관이나 세금 징수원 곁에 앉아 가치를 매기다</div>
-                <div class="info-box cog-box"><span class="label cog-label">동계어</span>assessment, session, reside</div>
-            </div>
-        </div>
 
-        <!-- 그룹 10: rid -->
-        <div class="group-title">🌱 [ rid 계열 : 치우다, 개간하다 ]</div>
+            <div class="card">
+                <div class="word-header">
+                    <span class="word-num">19</span>
+                    <span class="word">detach oneself from</span>
+                    <div class="meaning">~에서 벗어나다. 이탈하다[cite: 10]</div>
+                </div>
+                <div class="details-section">
+                    <div class="info-box ety-box"><span class="label ety-label">어원</span>des(반대로) + attach(붙이다) → 단단히 매어둔 말뚝에서 떼어내다</div>
+                    <div class="info-box cog-box"><span class="label cog-label">동계어</span>detach, detachment</div>
+                </div>
+            </div>
 
-        <div class="card">
-            <div class="word-header">
-                <span class="word-num">22</span>
-                <span class="word">rid A of B</span>
-                <div class="meaning">A에서 B를 없애다</div>
+            <div class="card">
+                <div class="word-header">
+                    <span class="word-num">30</span>
+                    <span class="word">detachment</span>
+                    <div class="meaning">분리, 이탈[cite: 10]</div>
+                </div>
+                <div class="details-section">
+                    <div class="info-box ety-box"><span class="label ety-label">어원</span>detach + -ment</div>
+                    <div class="info-box cog-box"><span class="label cog-label">동계어</span>detach, attach</div>
+                </div>
             </div>
-            <div class="details-section">
-                <div class="info-box ety-box"><span class="label ety-label">어원</span>고대 노르드어 rydja(땅을 개간하다, 치우다)에서 유래</div>
-                <div class="info-box cog-box"><span class="label cog-label">동계어</span>get rid of</div>
-            </div>
-        </div>
 
-        <div class="card">
-            <div class="word-header">
-                <span class="word-num">23</span>
-                <span class="word">get rid of</span>
-                <div class="meaning">~을 제거하다, 해소하다</div>
+            <div class="card">
+                <div class="word-header">
+                    <span class="word-num">17</span>
+                    <span class="word">distinguish</span>
+                    <div class="meaning">~을 구별 [구분]하다[cite: 10]</div>
+                </div>
+                <div class="details-section">
+                    <div class="info-box ety-box"><span class="label ety-label">어원</span>dis(따로) + stinguere(찌르다, 자국 내다) → 분리해서 콕콕 찔러 표시를 남겨 다르게 인식함</div>
+                    <div class="info-box cog-box"><span class="label cog-label">동계어</span>distinct, extinguish</div>
+                </div>
             </div>
-            <div class="details-section">
-                <div class="info-box ety-box"><span class="label ety-label">어원</span>구동사 (rid: 개간하다, 치우다)</div>
-                <div class="info-box cog-box"><span class="label cog-label">동계어</span>rid</div>
-            </div>
-        </div>
 
-        <!-- 그룹 11: 크기 및 순서 비교 -->
-        <div class="group-title">📏 [ 크기·순서·시간 비교 계열 ]</div>
+            <div class="card">
+                <div class="word-header">
+                    <span class="word-num">36</span>
+                    <span class="word">extinction</span>
+                    <div class="meaning">멸종, 소멸[cite: 10]</div>
+                </div>
+                <div class="details-section">
+                    <div class="info-box ety-box"><span class="label ety-label">어원</span>ex(밖으로) + stinguere(불을 끄다) + -tion → 촛불을 끄듯 생명의 불씨를 완전히 꺼버림</div>
+                    <div class="info-box cog-box"><span class="label cog-label">동계어</span>extinct, extinguish</div>
+                </div>
+            </div>
 
-        <div class="card">
-            <div class="word-header">
-                <span class="word-num">24</span>
-                <span class="word">majority</span>
-                <div class="meaning">다수</div>
-            </div>
-            <div class="details-section">
-                <div class="info-box ety-box"><span class="label ety-label">어원</span>major(더 큰) + -ity → 무리 중에서 더 크게 차지하는 부분</div>
-                <div class="info-box cog-box"><span class="label cog-label">동계어</span>major, mayor</div>
-            </div>
-        </div>
+            <div class="group-title">👯 [ copy / repro 계열 : 복제, 재생산 ]</div>
 
-        <div class="card">
-            <div class="word-header">
-                <span class="word-num">25</span>
-                <span class="word">minor</span>
-                <div class="meaning">소수의</div>
+            <div class="card">
+                <div class="word-header">
+                    <span class="word-num">03</span>
+                    <span class="word">reproduction</span>
+                    <div class="meaning">재생, 복제, 번식[cite: 10]</div>
+                </div>
+                <div class="details-section">
+                    <div class="info-box ety-box"><span class="label ety-label">어원</span>re(다시) + pro(앞으로) + ducere(이끌다) → 생명이나 형태를 다시 만들어 앞 세대로 이끌어냄</div>
+                    <div class="info-box cog-box"><span class="label cog-label">동계어</span>produce, product, introduce</div>
+                </div>
             </div>
-            <div class="details-section">
-                <div class="info-box ety-box"><span class="label ety-label">어원</span>minor(더 작은, 더 적은)</div>
-                <div class="info-box cog-box"><span class="label cog-label">동계어</span>minority, minus, minute</div>
-            </div>
-        </div>
 
-        <div class="card">
-            <div class="word-header">
-                <span class="word-num">26</span>
-                <span class="word">priority</span>
-                <div class="meaning">우선하는 것</div>
+            <div class="card">
+                <div class="word-header">
+                    <span class="word-num">04</span>
+                    <span class="word">copy</span>
+                    <div class="meaning">복제하다[cite: 10]</div>
+                </div>
+                <div class="details-section">
+                    <div class="info-box ety-box"><span class="label ety-label">어원</span>copia(풍부함, 많음) → 원본을 여러 개로 만들어 풍부하게 불리다</div>
+                    <div class="info-box cog-box"><span class="label cog-label">동계어</span>copious</div>
+                </div>
             </div>
-            <div class="details-section">
-                <div class="info-box ety-box"><span class="label ety-label">어원</span>prior(이전의, 먼저인) + -ity → 다른 것보다 시간이나 순서상 먼저 두는 것</div>
-                <div class="info-box cog-box"><span class="label cog-label">동계어</span>prior, prioritize</div>
-            </div>
-        </div>
 
-        <div class="card">
-            <div class="word-header">
-                <span class="word-num">27</span>
-                <span class="word">earlier</span>
-                <div class="meaning">이전의, 앞의</div>
+            <div class="card">
+                <div class="word-header">
+                    <span class="word-num">26</span>
+                    <span class="word">identical twins</span>
+                    <div class="meaning">일란성 쌍둥이[cite: 10]</div>
+                </div>
+                <div class="details-section">
+                    <div class="info-box ety-box"><span class="label ety-label">어원</span>idem(같은)에서 유래한 identical(동일한) + twins(쌍둥이)</div>
+                    <div class="info-box cog-box"><span class="label cog-label">동계어</span>identify, identity</div>
+                </div>
             </div>
-            <div class="details-section">
-                <div class="info-box ety-box"><span class="label ety-label">어원</span>early의 비교급 (시간상 더 이른)</div>
-                <div class="info-box cog-box"><span class="label cog-label">동계어</span>early, earliest</div>
-            </div>
-        </div>
 
-        <div class="card">
-            <div class="word-header">
-                <span class="word-num">28</span>
-                <span class="word">later</span>
-                <div class="meaning">뒤의, 나중의</div>
+            <div class="card">
+                <div class="word-header">
+                    <span class="word-num">22</span>
+                    <span class="word">same</span>
+                    <div class="meaning">동일한[cite: 10]</div>
+                </div>
+                <div class="details-section">
+                    <div class="info-box ety-box"><span class="label ety-label">어원</span>고대 노르드어 samr(동일한, 함께)</div>
+                    <div class="info-box cog-box"><span class="label cog-label">동계어</span>similar, some</div>
+                </div>
             </div>
-            <div class="details-section">
-                <div class="info-box ety-box"><span class="label ety-label">어원</span>late(늦은)의 비교급 형태</div>
-                <div class="info-box cog-box"><span class="label cog-label">동계어</span>late, lately</div>
-            </div>
-        </div>
 
-        <!-- 그룹 12: 믿음 및 종교 -->
-        <div class="group-title">🙏 [ 종교 및 신념 계열 ]</div>
+            <div class="group-title">🧩 [ 기타 중요 어원 ]</div>
 
-        <div class="card">
-            <div class="word-header">
-                <span class="word-num">29</span>
-                <span class="word">sacredness</span>
-                <div class="meaning">신성함</div>
+            <div class="card">
+                <div class="word-header">
+                    <span class="word-num">14</span>
+                    <span class="word">evolve</span>
+                    <div class="meaning">전개되다, 진화하다[cite: 10]</div>
+                </div>
+                <div class="details-section">
+                    <div class="info-box ety-box"><span class="label ety-label">어원</span>ex(밖으로) + volvere(구르다, 돌다) → 두루마리를 밖으로 굴리듯 서서히 펼쳐서 발전함</div>
+                    <div class="info-box cog-box"><span class="label cog-label">동계어</span>evolution, revolve, involve</div>
+                </div>
             </div>
-            <div class="details-section">
-                <div class="info-box ety-box"><span class="label ety-label">어원</span>sacer(신에게 바쳐진, 신성한) + -ness</div>
-                <div class="info-box cog-box"><span class="label cog-label">동계어</span>sacred, sacrifice</div>
-            </div>
-        </div>
 
-        <div class="card">
-            <div class="word-header">
-                <span class="word-num">30</span>
-                <span class="word">religious</span>
-                <div class="meaning">신성한, 성스러운, 종교적인</div>
+            <div class="card">
+                <div class="word-header">
+                    <span class="word-num">20</span>
+                    <span class="word">be absorbed in</span>
+                    <div class="meaning">~에 몰두하다[cite: 10]</div>
+                </div>
+                <div class="details-section">
+                    <div class="info-box ety-box"><span class="label ety-label">어원</span>ab(멀리) + sorbere(빨아들이다) → 스펀지가 물을 빨아들이듯 정신이 쏙 빨려 들어감</div>
+                    <div class="info-box cog-box"><span class="label cog-label">동계어</span>absorb, absorption</div>
+                </div>
             </div>
-            <div class="details-section">
-                <div class="info-box ety-box"><span class="label ety-label">어원</span>re(다시) + ligare(묶다) → 신과 인간을 다시 단단히 묶어 연결하는</div>
-                <div class="info-box cog-box"><span class="label cog-label">동계어</span>religion, rely, ligament</div>
-            </div>
-        </div>
 
-        <div class="card">
-            <div class="word-header">
-                <span class="word-num">31</span>
-                <span class="word">faithful</span>
-                <div class="meaning">충실한</div>
+            <div class="card">
+                <div class="word-header">
+                    <span class="word-num">32</span>
+                    <span class="word">microscopic</span>
+                    <div class="meaning">현미경의, 현미경으로만 볼 수 있을 정도로 작은[cite: 10]</div>
+                </div>
+                <div class="details-section">
+                    <div class="info-box ety-box"><span class="label ety-label">어원</span>micro(작은) + scope(보다) + -ic → 아주 작은 것을 보는 기계(현미경)의</div>
+                    <div class="info-box cog-box"><span class="label cog-label">동계어</span>microscope, telescope, microwave</div>
+                </div>
             </div>
-            <div class="details-section">
-                <div class="info-box ety-box"><span class="label ety-label">어원</span>fides(믿음, 신뢰) + -ful(가득 찬) → 믿음이 꽉 찬</div>
-                <div class="info-box cog-box"><span class="label cog-label">동계어</span>faith, fidelity</div>
-            </div>
-        </div>
 
-        <div class="card">
-            <div class="word-header">
-                <span class="word-num">32</span>
-                <span class="word">belief</span>
-                <div class="meaning">신념, 믿음</div>
+            <div class="card">
+                <div class="word-header">
+                    <span class="word-num">25</span>
+                    <span class="word">the higher [lower] mammals</span>
+                    <div class="meaning">고등[하등] 포유동물[cite: 10]</div>
+                </div>
+                <div class="details-section">
+                    <div class="info-box ety-box"><span class="label ety-label">어원</span>mamma(유방) + -al → 젖을 먹여 새끼를 기르는 동물(mammal)</div>
+                    <div class="info-box cog-box"><span class="label cog-label">동계어</span>mammary</div>
+                </div>
             </div>
-            <div class="details-section">
-                <div class="info-box ety-box"><span class="label ety-label">어원</span>be(강조) + lief(소중한, 믿는) → 소중히 여기고 확고하게 믿는 것</div>
-                <div class="info-box cog-box"><span class="label cog-label">동계어</span>believe, believable</div>
-            </div>
-        </div>
 
-        <!-- 그룹 13: 문명 및 사회 -->
-        <div class="group-title">🏛️ [ 사회 및 문명 계열 ]</div>
+            <div class="card">
+                <div class="word-header">
+                    <span class="word-num">07</span>
+                    <span class="word">store</span>
+                    <div class="meaning">저장하다[cite: 10]</div>
+                </div>
+                <div class="details-section">
+                    <div class="info-box ety-box"><span class="label ety-label">어원</span>staurare(세우다, 비축하다) → 창고에 물건을 차곡차곡 세워두다</div>
+                    <div class="info-box cog-box"><span class="label cog-label">동계어</span>restore, storage</div>
+                </div>
+            </div>
 
-        <div class="card">
-            <div class="word-header">
-                <span class="word-num">33</span>
-                <span class="word">civilize</span>
-                <div class="meaning">문명화하다</div>
+            <div class="card">
+                <div class="word-header">
+                    <span class="word-num">13</span>
+                    <span class="word">steamy</span>
+                    <div class="meaning">증기의[cite: 10]</div>
+                </div>
+                <div class="details-section">
+                    <div class="info-box ety-box"><span class="label ety-label">어원</span>steam(수증기) + -y</div>
+                    <div class="info-box cog-box"><span class="label cog-label">동계어</span>steam</div>
+                </div>
             </div>
-            <div class="details-section">
-                <div class="info-box ety-box"><span class="label ety-label">어원</span>civis(시민) + -ize(~하게 만들다) → 예의 바른 시민의 상태로 만들다</div>
-                <div class="info-box cog-box"><span class="label cog-label">동계어</span>civil, civilization, city</div>
-            </div>
-        </div>
 
-        <div class="card">
-            <div class="word-header">
-                <span class="word-num">34</span>
-                <span class="word">culture</span>
-                <div class="meaning">문명, 문화</div>
+            <div class="card">
+                <div class="word-header">
+                    <span class="word-num">24</span>
+                    <span class="word">beam</span>
+                    <div class="meaning">빛, 광선[cite: 10]</div>
+                </div>
+                <div class="details-section">
+                    <div class="info-box ety-box"><span class="label ety-label">어원</span>고대 영어 beam(나무 기둥) → 일직선으로 쭉 뻗어 나가는 빛기둥</div>
+                    <div class="info-box cog-box"><span class="label cog-label">동계어</span>(해당없음)</div>
+                </div>
             </div>
-            <div class="details-section">
-                <div class="info-box ety-box"><span class="label ety-label">어원</span>colere(경작하다, 가꾸다) → 자연 상태의 땅이나 인간을 가꾸어 발전시킨 상태</div>
-                <div class="info-box cog-box"><span class="label cog-label">동계어</span>cultivate, agriculture, colony</div>
-            </div>
-        </div>
 
-        <div class="card">
-            <div class="word-header">
-                <span class="word-num">35</span>
-                <span class="word">royalty</span>
-                <div class="meaning">왕위, 왕권</div>
+            <div class="card">
+                <div class="word-header">
+                    <span class="word-num">34</span>
+                    <span class="word">mix</span>
+                    <div class="meaning">섞다. 혼합하다[cite: 10]</div>
+                </div>
+                <div class="details-section">
+                    <div class="info-box ety-box"><span class="label ety-label">어원</span>miscere(섞다, 뒤죽박죽으로 만들다)</div>
+                    <div class="info-box cog-box"><span class="label cog-label">동계어</span>mixture, miscellaneous</div>
+                </div>
             </div>
-            <div class="details-section">
-                <div class="info-box ety-box"><span class="label ety-label">어원</span>rex/reg-(왕) → 왕족이 가지는 권리나 지위</div>
-                <div class="info-box cog-box"><span class="label cog-label">동계어</span>royal, regal, regulate</div>
-            </div>
-        </div>
 
-        <!-- 그룹 14: 기타 독립 어원 -->
-        <div class="group-title">🧩 [ 기타 중요 어원 ]</div>
-
-        <div class="card">
-            <div class="word-header">
-                <span class="word-num">36</span>
-                <span class="word">substitute</span>
-                <div class="meaning">대신하다, 대체하다</div>
-            </div>
-            <div class="details-section">
-                <div class="info-box ety-box"><span class="label ety-label">어원</span>sub(대신하여, 아래에) + statuere(세우다) → 원래 것 대신 가져다 세우다</div>
-                <div class="info-box cog-box"><span class="label cog-label">동계어</span>substitution, statue, institute</div>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="word-header">
-                <span class="word-num">37</span>
-                <span class="word">evaluation</span>
-                <div class="meaning">평가</div>
-            </div>
-            <div class="details-section">
-                <div class="info-box ety-box"><span class="label ety-label">어원</span>ex(밖으로) + valere(가치 있다, 강하다) → 내재된 가치를 밖으로 드러내어 매기다</div>
-                <div class="info-box cog-box"><span class="label cog-label">동계어</span>evaluate, value, valid</div>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="word-header">
-                <span class="word-num">38</span>
-                <span class="word">mission</span>
-                <div class="meaning">임무, 선교</div>
-            </div>
-            <div class="details-section">
-                <div class="info-box ety-box"><span class="label ety-label">어원</span>mittere(보내다) → 어떤 목적을 위해 파견되어 보내진 일</div>
-                <div class="info-box cog-box"><span class="label cog-label">동계어</span>missile, transmit, admit</div>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="word-header">
-                <span class="word-num">39</span>
-                <span class="word">revolutionary</span>
-                <div class="meaning">혁명의</div>
-            </div>
-            <div class="details-section">
-                <div class="info-box ety-box"><span class="label ety-label">어원</span>re(다시) + volvere(돌다) + -ary → 완전히 뒤집어엎어 돌아가는</div>
-                <div class="info-box cog-box"><span class="label cog-label">동계어</span>revolution, revolve, involve</div>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="word-header">
-                <span class="word-num">40</span>
-                <span class="word">previous</span>
-                <div class="meaning">이전의, 우선하는</div>
-            </div>
-            <div class="details-section">
-                <div class="info-box ety-box"><span class="label ety-label">어원</span>prae(미리, 앞서) + via(길) → 가야 할 길에 앞서 있는</div>
-                <div class="info-box cog-box"><span class="label cog-label">동계어</span>previously, obvious, via</div>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="word-header">
-                <span class="word-num">41</span>
-                <span class="word">gradually</span>
-                <div class="meaning">점차로</div>
-            </div>
-            <div class="details-section">
-                <div class="info-box ety-box"><span class="label ety-label">어원</span>gradus(걸음, 단계) → 한 걸음 한 걸음 단계적으로</div>
-                <div class="info-box cog-box"><span class="label cog-label">동계어</span>gradual, grade, upgrade</div>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="word-header">
-                <span class="word-num">42</span>
-                <span class="word">sudden</span>
-                <div class="meaning">갑작스러운</div>
-            </div>
-            <div class="details-section">
-                <div class="info-box ety-box"><span class="label ety-label">어원</span>sub(아래에서) + ire(가다) → 예상치 못하게 아래에서 쑥 다가옴</div>
-                <div class="info-box cog-box"><span class="label cog-label">동계어</span>suddenly</div>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="word-header">
-                <span class="word-num">43</span>
-                <span class="word">vanish</span>
-                <div class="meaning">사라지다</div>
-            </div>
-            <div class="details-section">
-                <div class="info-box ety-box"><span class="label ety-label">어원</span>vanus(텅 빈, 실체가 없는) → 텅 비어 없어지다</div>
-                <div class="info-box cog-box"><span class="label cog-label">동계어</span>vain, vanity</div>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="word-header">
-                <span class="word-num">44</span>
-                <span class="word">mean</span>
-                <div class="meaning">의미하다, 나타내다</div>
-            </div>
-            <div class="details-section">
-                <div class="info-box ety-box"><span class="label ety-label">어원</span>고대 영어 mænan (의도하다, 마음속에 품다)</div>
-                <div class="info-box cog-box"><span class="label cog-label">동계어</span>meaning, meaningful</div>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="word-header">
-                <span class="word-num">45</span>
-                <span class="word">pass down</span>
-                <div class="meaning">~을 전하다, 후세에 물려주다</div>
-            </div>
-            <div class="details-section">
-                <div class="info-box ety-box"><span class="label ety-label">어원</span>구동사 (pass 넘기다 + down 아래 세대로)</div>
-                <div class="info-box cog-box"><span class="label cog-label">동계어</span>pass</div>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="word-header">
-                <span class="word-num">46</span>
-                <span class="word">biographer</span>
-                <div class="meaning">전기 작가</div>
-            </div>
-            <div class="details-section">
-                <div class="info-box ety-box"><span class="label ety-label">어원</span>bio(생명, 일생) + graph(쓰다) + -er(사람) → 한 사람의 일생을 기록하는 사람</div>
-                <div class="info-box cog-box"><span class="label cog-label">동계어</span>biology, paragraph, autobiography</div>
-            </div>
         </div>
 
     </div>
 
+    <!-- 스크립트 영역 -->
+    <script>
+        function openTab(evt, dayName) {
+            // 모든 탭 콘텐츠 숨김
+            const tabcontent = document.getElementsByClassName("tab-content");
+            for (let i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].classList.remove("active");
+            }
+
+            // 모든 탭 버튼 비활성화
+            const tablinks = document.getElementsByClassName("tab-btn");
+            for (let i = 0; i < tablinks.length; i++) {
+                tablinks[i].classList.remove("active");
+            }
+
+            // 클릭한 탭과 콘텐츠 활성화
+            document.getElementById(dayName).classList.add("active");
+            evt.currentTarget.classList.add("active");
+            
+            // 화면 최상단으로 부드럽게 이동
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
 </body>
 </html>
